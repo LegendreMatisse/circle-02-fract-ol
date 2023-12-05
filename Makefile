@@ -1,0 +1,81 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/18 17:23:32 by mlegendr          #+#    #+#              #
+#    Updated: 2023/12/05 21:20:51 by mlegendr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME		=	fractol
+LIBRARY		=	fractol.a
+
+CC			=	cc
+CFLAGS		=	-Wall -Werror -Wextra -g
+AR			=	ar rcs
+RM			=	rm -rf
+
+SRCS		=	test.c
+
+OBJ_DIR		=	obj
+OBJS		=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
+
+LIBFT_PATH	=	./libft
+LIBFT		=	$(LIBFT_PATH)/libft.a
+
+MLX_PATH	=	minilibx-linux/
+MLX_NAME	=	libmlx.a
+MLX			=	$(MLX_PATH)$(MLX_NAME)
+
+GREEN		=	\033[0;32m
+YELLOW		=	\033[0;33m
+RESET		=	\033[0m
+
+$(OBJ_DIR)/%.o:	%.c
+				@$(CC) $(CFLAGS) -c $< -o $@
+				@echo "$(YELLOC)Compiling &<...$(RESET)"
+
+all:		$(NAME)
+
+$(MLX):		
+			@echo "$(YELLOW)Compiling minilibx...$(RESET)"
+			@make -sC $(MLX_PATH) >/dev/null 2>&1
+			@echo "$(GREEN)Minilibx is ready.$(RESET)"
+
+$(NAME):	$(LIBFT) $(MLX) $(OBJ_DIR) $(OBJS)
+			@echo "$(YELLOW)Creating $(LIBRARY) archive...$(RESET)"
+			@cp $(LIBFT) ./ >/dev/null 2>&1
+			@cp $(MLX) ./ >/dev/null 2>&1
+			@$(AR) $(LIBRARY) $(OBJS) >/dev/null 2>&1
+			@echo "$(YELLOW)Linking $(NAME) executable...$(RESET)"
+			@$(CC) -o $(NAME) $(LIBRARY) -L$(LIBFT_PATH) -lft $(MLX) -lXext -lX11 -lm>/dev/null 2>&1
+			@echo "$(GREEN)$(NAME) is ready.$(RESET)"
+
+$(LIBFT):
+			@make -C $(LIBFT_PATH) all
+			@echo "$(YELLOW)Building libft...$(RESET)"
+
+$(OBJ_DIR):
+			@mkdir -p $(OBJ_DIR)
+			@echo "$(YELLOW)Creating the objects directory...$(RESET)"
+
+clean:
+			@make -C $(LIBFT_PATH) clean >/dev/null 2>&1
+			@make -C $(MLX_PATH) clean >/dev/null 2>&1
+			@$(RM) $(OBJ_DIR) >/dev/null 2>&1
+			@$(RM) *.0 >/dev/null 2>&1
+			@echo "$(YELLOW)Cleaning all .o files.$(RESET)"
+
+fclean:		clean
+			@make -C $(LIBFT_PATH) fclean >/dev/null 2>&1
+			@$(RM) $(LIBRARY) >/dev/null 2>&1
+			@$(RM) $(NAME) >/dev/null 2>&1
+			@$(RM) *.a >/dev/null 2>&1
+			@echo "$(YELLOW)Cleaning all .a files.$(RESET)"
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
