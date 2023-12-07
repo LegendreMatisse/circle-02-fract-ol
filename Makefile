@@ -6,7 +6,7 @@
 #    By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 17:23:32 by mlegendr          #+#    #+#              #
-#    Updated: 2023/12/05 21:20:51 by mlegendr         ###   ########.fr        #
+#    Updated: 2023/12/07 16:48:06 by mlegendr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIBFT_PATH	=	./libft
 LIBFT		=	$(LIBFT_PATH)/libft.a
 
 MLX_PATH	=	minilibx-linux/
-MLX_NAME	=	libmlx.a
+MLX_NAME	=	libmlx_Linux.a
 MLX			=	$(MLX_PATH)$(MLX_NAME)
 
 GREEN		=	\033[0;32m
@@ -36,13 +36,13 @@ RESET		=	\033[0m
 
 $(OBJ_DIR)/%.o:	%.c
 				@$(CC) $(CFLAGS) -c $< -o $@
-				@echo "$(YELLOC)Compiling &<...$(RESET)"
+				@echo "$(YELLOC)Compiling $<...$(RESET)"
 
 all:		$(NAME)
 
 $(MLX):		
 			@echo "$(YELLOW)Compiling minilibx...$(RESET)"
-			@make -sC $(MLX_PATH) >/dev/null 2>&1
+			@make -C $(MLX_PATH) all  >/dev/null 2>&1
 			@echo "$(GREEN)Minilibx is ready.$(RESET)"
 
 $(NAME):	$(LIBFT) $(MLX) $(OBJ_DIR) $(OBJS)
@@ -51,7 +51,7 @@ $(NAME):	$(LIBFT) $(MLX) $(OBJ_DIR) $(OBJS)
 			@cp $(MLX) ./ >/dev/null 2>&1
 			@$(AR) $(LIBRARY) $(OBJS) >/dev/null 2>&1
 			@echo "$(YELLOW)Linking $(NAME) executable...$(RESET)"
-			@$(CC) -o $(NAME) $(LIBRARY) -L$(LIBFT_PATH) -lft $(MLX) -lXext -lX11 -lm>/dev/null 2>&1
+			@$(CC) -o $(NAME) $(LIBRARY) -L$(LIBFT_PATH) -lft -L$(MLX) -lXext -lX11 -lm -lz >/dev/null 2>&1
 			@echo "$(GREEN)$(NAME) is ready.$(RESET)"
 
 $(LIBFT):

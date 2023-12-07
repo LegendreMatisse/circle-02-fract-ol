@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 21:20:55 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/07 17:08:09 by mlegendr         ###   ########.fr       */
+/*   Created: 2023/12/07 17:04:23 by mlegendr          #+#    #+#             */
+/*   Updated: 2023/12/07 17:07:52 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
-int main(void)
-{
-	ft_printf("test");
-}
+# include "libft/libft.h"
+# include "minilibx-linux/mlx.h"
+# include "minilibx-linux/mlx_int.h"
+
+#endif
