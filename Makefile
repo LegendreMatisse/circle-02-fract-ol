@@ -6,7 +6,7 @@
 #    By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 17:23:32 by mlegendr          #+#    #+#              #
-#    Updated: 2023/12/07 16:48:06 by mlegendr         ###   ########.fr        #
+#    Updated: 2023/12/08 18:19:22 by mlegendr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,16 @@ MLX_PATH	=	minilibx-linux/
 MLX_NAME	=	libmlx_Linux.a
 MLX			=	$(MLX_PATH)$(MLX_NAME)
 
-GREEN		=	\033[0;32m
-YELLOW		=	\033[0;33m
+RAND		=	$(shell shuf -i 100-231 -n 1)
+RAND2		=	$(shell shuf -i 100-105 -n 1)
+
+GREEN		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
+YELLOW		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
 RESET		=	\033[0m
 
 $(OBJ_DIR)/%.o:	%.c
 				@$(CC) $(CFLAGS) -c $< -o $@
-				@echo "$(YELLOC)Compiling $<...$(RESET)"
+				@echo "$(YELLOW)Compiling $<...$(RESET)"
 
 all:		$(NAME)
 
@@ -55,7 +58,7 @@ $(NAME):	$(LIBFT) $(MLX) $(OBJ_DIR) $(OBJS)
 			@echo "$(GREEN)$(NAME) is ready.$(RESET)"
 
 $(LIBFT):
-			@make -C $(LIBFT_PATH) all
+			@make -sC $(LIBFT_PATH) all
 			@echo "$(YELLOW)Building libft...$(RESET)"
 
 $(OBJ_DIR):

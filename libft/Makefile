@@ -29,9 +29,12 @@ ARFLAGS = -c -r -s
 
 RMF = rm -rf
 
-GREEN = \033[0;32m
-YELLOW = \033[0;33m
-RESET = \033[0;m
+RAND		=	$(shell shuf -i 100-231 -n 1)
+RAND2		=	$(shell shuf -i 100-105 -n 1)
+
+GREEN		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
+YELLOW		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
+RESET		=	\033[0m
 
 .c.o:
 	@echo "$(YELLOW)Compiling $<...$(RESET)"
