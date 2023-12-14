@@ -6,7 +6,7 @@
 /*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:04:23 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/08 19:04:15 by mlegendr         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:28:29 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ typedef struct  s_data {
 	int     line_length;
 	int		endian;
 }				t_data;
+
+typedef struct	s_mlx {
+	void	*mlx;
+	void	*win;
+}				t_mlx;
 
 #endif

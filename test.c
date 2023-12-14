@@ -6,7 +6,7 @@
 /*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 21:20:55 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/08 19:54:25 by mlegendr         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:34:33 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,32 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+int		close_win(int keycode, t_mlx *mlx)
+{
+	(void)keycode;
+	mlx_destroy_window(mlx->mlx, mlx->win);
+	//Replace with actual exit function with frees and stuff
+	exit(0);
+}
+
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
+	t_mlx	mlx;
+	//void	*mlx;
+	//void	*mlx_win;
 	t_data	img;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "First MLX test");
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	mlx.mlx = mlx_init();
+	mlx.win = mlx_new_window(mlx.mlx, 1920, 1080, "First MLX test");
+	img.img = mlx_new_image(mlx.mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
 	for (int j = 0; j < 1080; j+=25)
 	{
 		for (int i = 0; i < 1920; i++)
-			my_mlx_pixel_put(&img, i, j, 0x00FF0000);
+			my_mlx_pixel_put(&img, i, j, 0x00845123);
 	}
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+	mlx_put_image_to_window(mlx.mlx, mlx.win, img.img, 0, 0);
+	mlx_hook(mlx.win, 2, 1L<<0, close_win, &mlx);
+	mlx_loop(mlx.mlx);
 }
