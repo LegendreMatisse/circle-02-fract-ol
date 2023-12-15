@@ -35,26 +35,15 @@ int	main(void)
 	//void	*mlx_win;
 	t_data	img;
 
-<<<<<<< HEAD
 	mlx.mlx = mlx_init();
-	mlx.win = mlx_new_window(mlx.mlx, 1920, 1080, "First MLX test");
-	img.img = mlx_new_image(mlx.mlx, 1920, 1080);
-=======
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 920, 800, "First MLX test");
-	img.img = mlx_new_image(mlx, 920, 800);
->>>>>>> e628e329a470701558083782bcf62c1379ef2827
+	mlx.win = mlx_new_window(mlx.mlx, 920, 800, "First MLX test");
+	img.img = mlx_new_image(mlx.mlx, 920, 800);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
 	for (int j = 0; j < 800; j+=25)
 	{
-<<<<<<< HEAD
-		for (int i = 0; i < 1920; i++)
-			my_mlx_pixel_put(&img, i, j, 0x00845123);
-=======
 		for (int i = 0; i < 920; i++)
-			my_mlx_pixel_put(&img, i, j, 0x00FF0000);
->>>>>>> e628e329a470701558083782bcf62c1379ef2827
+			my_mlx_pixel_put(&img, i, j, 0x00845123);
 	}
 	mlx_put_image_to_window(mlx.mlx, mlx.win, img.img, 0, 0);
 	mlx_hook(mlx.win, 2, 1L<<0, close_win, &mlx);
