@@ -6,7 +6,7 @@
 #    By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 17:23:32 by mlegendr          #+#    #+#              #
-#    Updated: 2023/12/08 18:55:46 by mlegendr         ###   ########.fr        #
+#    Updated: 2023/12/18 17:10:54 by mlegendr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS		=	-Wall -Werror -Wextra -g
 AR			=	ar rcs
 RM			=	rm -rf
 
-SRCS		=	test.c
+SRCS		=	test2.c
 
 OBJ_DIR		=	obj
 OBJS		=	$(SRCS:%.c=$(OBJ_DIR)/%.o)

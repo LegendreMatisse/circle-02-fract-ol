@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   test2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 21:20:55 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/14 19:34:33 by mlegendr         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:12:34 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 int		close_win(int keycode, t_mlx *mlx)
 {
-	(void)keycode;
-	mlx_destroy_window(mlx->mlx, mlx->win);
-	//Replace with actual exit function with frees and stuff
-	exit(0);
+	if (keycode == XK_Escape)
+	{
+		mlx_destroy_window(mlx->mlx, mlx->win);
+		//Replace with actual exit function with frees and stuff
+		exit(0);
+	}
+	return (0);
 }
 
 int	main(void)
