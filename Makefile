@@ -18,7 +18,7 @@ CFLAGS		=	-Wall -Werror -Wextra -g
 AR			=	ar rcs
 RM			=	rm -rf
 
-SRCS		=	test2.c
+SRCS		=	test2.c utils.c mlx_functions.c
 
 OBJ_DIR		=	obj
 OBJS		=	$(SRCS:%.c=$(OBJ_DIR)/%.o)

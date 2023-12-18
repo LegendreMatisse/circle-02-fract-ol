@@ -21,60 +21,12 @@ void	ft_print_contrl(void)
 	ft_printf("NOTHING HAHA GET YOINKED\n");
 }
 
-int	ft_name_check(char *name)
-{
-	if (ft_strncmp(name, "mandelbrot", 11) == 0)
-		return (0);
-	else if (ft_strncmp(name, "julia", 6) == 0)
-		return (0);
-	else if (ft_strncmp(name, "sierpinski", 11) == 0)
-		return (0);
-	else
-		return (1);
-}
-
-void ft_primary_arg_check(int argc, char **argv)
-{
-	if (argc < 2)
-		ft_exit_w_mess("Incorrect usage. Try ./fractol <fractal>", NULL, 1);
-	else
-	{
-		if (ft_name_check(argv[1]) == 1)
-            ft_exit_w_mess("Invalid argument. Try ./fractol <mandelbrot>,  <julia> or <sierpinski>", NULL, 1);
-	}
-}
-
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
-}
-
-int ft_exit_w_mess(char *str, t_mlx *mlx, int error)
-{
-	ft_printf("%s\n", str);
-	if (mlx != NULL)
-		mlx_destroy_window(mlx->mlx, mlx->win);
-	//Replace with actual exit function with frees and stuff
-	exit(error);
-	return (error);
-}
-
-int	ft_exit_wo_mess(t_mlx *mlx)
-{
-	mlx_destroy_window(mlx->mlx, mlx->win);
-	//Replace with actual exit function with frees and stuff
-	exit(0);
-	return (0);
-}
-
-int		keypress(int keycode, t_mlx *mlx)
-{
-	if (keycode == XK_Escape)
-		ft_exit_wo_mess(mlx);
-	return (0);
 }
 
 int	main(int argc, char **argv)
