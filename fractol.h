@@ -6,7 +6,7 @@
 /*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:04:23 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/14 19:28:29 by mlegendr         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:47:38 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ typedef struct	s_mlx {
 	void	*win;
 }				t_mlx;
 
+/*Utilities*/
+void	ft_print_contrl(void);
+int		ft_exit_w_mess(char *str, t_mlx *mlx, int error);
+int		ft_exit_wo_mess(t_mlx *mlx);
+
+/*MLX specific functions*/
+int		keypress(int keycode, t_mlx *mlx);
+
+/*Argument checks*/
+void	ft_primary_arg_check(int argc, char **argv);
 #endif
