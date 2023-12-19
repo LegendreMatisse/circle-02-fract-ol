@@ -93,7 +93,7 @@ int main(void)
             img.addr[pixel + 3] = (color >> 24);
         }
     }*/
-    draw_circle(&img, 250, 250, 100, 0x00FF0000);
+    draw_circle(&img, 500, 500, 100, 0xABCDEF);
     //put the image to the window
     mlx_put_image_to_window(mlx, win, img.img, 0, 0);
 
