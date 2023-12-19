@@ -47,10 +47,11 @@ int main(void)
 								&img.endian);
 
     //drawing pixels and setting colours.
-    /*int color = 0xABCDEF;
+    int color = 0xABCDEF;
     if (img.bits_per_pixel != 32)
         color = mlx_get_color_value(mlx, color);
 
+    /*
     for(int y = 0; y < 500; y++)
     for(int x = 0; x < 500; x++)
     {
@@ -93,7 +94,7 @@ int main(void)
             img.addr[pixel + 3] = (color >> 24);
         }
     }*/
-    draw_circle(&img, 500, 500, 100, 0xABCDEF);
+    draw_circle(&img, 250, 250, 100, color);
     //put the image to the window
     mlx_put_image_to_window(mlx, win, img.img, 0, 0);
 
