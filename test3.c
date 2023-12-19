@@ -23,8 +23,8 @@ int main(void)
     if (img.bits_per_pixel != 32)
         color = mlx_get_color_value(mlx, color);
 
-    for(int y = 0; y < 500; y+=25)
-    for(int x = 0; x < 500; x+=25)
+    for(int y = 0; y < 500; y++)
+    for(int x = 0; x < 500; x++)
     {
         int pixel = (y * img.line_length) + (x * 4);
 
