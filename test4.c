@@ -14,7 +14,7 @@ void    cool_fractol_function(t_data *img, t_mlx *mlx)
         while (x < 500)
         {
             int pixel = (y * img->line_length) + (x * 4);
-            img->addr[pixel] = color;
+            *(unsigned int*)(img->addr + pixel) = color; // set all bytes of the pixel's color
             x++;
         }
         y++;
