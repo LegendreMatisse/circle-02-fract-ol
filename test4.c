@@ -43,14 +43,13 @@ int draw_fractal(t_mlx *mlx)
     {
         while (mlx->y < SIZE)
         {
-            if (ft_strncmp(query, "mandel", 7) == 0)
-                cool_fractol_function(mlx);
+            cool_fractol_function(mlx);
             mlx->y++;
         }
         mlx->x++;
         mlx->y = 0;
     }
-    mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->image, 0, 0);
+    mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
     return (0);
 }
 
