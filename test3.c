@@ -30,7 +30,7 @@ void draw_circle(t_data *img, int xc, int yc, int r, int color)
     }
 }
 
-int main(void)
+int __main(void)
 {
     void *mlx;
     void *win;
