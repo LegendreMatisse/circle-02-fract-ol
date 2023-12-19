@@ -2,6 +2,34 @@
 
 #include "fractol.h"
 
+void draw_circle(t_data *img, int xc, int yc, int r, int color)
+{
+    int x = 0, y = r;
+    int d = 3 - 2 * r;
+    while (y >= x)
+    {
+        // these conditions are for the 8 symmetries of a circle
+        img->addr[(yc+y)*img->line_length + (xc+x)*4] = color;
+        img->addr[(yc-y)*img->line_length + (xc+x)*4] = color;
+        img->addr[(yc+y)*img->line_length + (xc-x)*4] = color;
+        img->addr[(yc-y)*img->line_length + (xc-x)*4] = color;
+        img->addr[(yc+x)*img->line_length + (xc+y)*4] = color;
+        img->addr[(yc-x)*img->line_length + (xc+y)*4] = color;
+        img->addr[(yc+x)*img->line_length + (xc-y)*4] = color;
+        img->addr[(yc-x)*img->line_length + (xc-y)*4] = color;
+
+        x++;
+        // update d, x, y
+        if (d > 0)
+        {
+            y--; 
+            d = d + 4 * (x - y) + 10;
+        }
+        else
+            d = d + 4 * x + 6;
+    }
+}
+
 int main(void)
 {
     void *mlx;
@@ -19,7 +47,7 @@ int main(void)
 								&img.endian);
 
     //drawing pixels and setting colours.
-    int color = 0xABCDEF;
+    /*int color = 0xABCDEF;
     if (img.bits_per_pixel != 32)
         color = mlx_get_color_value(mlx, color);
 
@@ -64,7 +92,8 @@ int main(void)
             img.addr[pixel + 2] = (color >> 16) & 0xAA;
             img.addr[pixel + 3] = (color >> 24);
         }
-    }
+    }*/
+    draw_circle(&img, 250, 250, 100, 0x00FF0000);
     //put the image to the window
     mlx_put_image_to_window(mlx, win, img.img, 0, 0);
 
