@@ -6,7 +6,7 @@
 /*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 21:20:55 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/18 18:53:14 by mlegendr         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:20:41 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	img.img = mlx_new_image(mlx.mlx, 920, 800);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	for (int j = 0; j < 800; j+=25)
+	for (int j = 0; j < 800; j++)
 	{
 		for (int i = 0; i < 920; i++)
 			my_mlx_pixel_put(&img, i, j, 0x00845123);
