@@ -16,4 +16,5 @@ int main(void)
     img = mlx_new_image(mlx, 500, 500);
 
     mlx_loop(mlx);
+    return (0);
 }

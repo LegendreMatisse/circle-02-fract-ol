@@ -52,4 +52,6 @@ int	_main(int argc, char **argv)
 	mlx_hook(mlx.win, 2, 1L<<0, keypress, &mlx);
 	mlx_hook(mlx.win, 17, 1L<<17, ft_exit_wo_mess, &mlx);
 	mlx_loop(mlx.mlx);
+
+	return (0);
 }
