@@ -2,12 +2,12 @@
 
 #include "fractol.h"
 
-void    cool_fractol_function(t_data *img)
+void    cool_fractol_function(t_data *img, t_mlx *mlx)
 {
     int x = 0, y = 0;
     int color = 0xffff00ff;
     if (img->bits_per_pixel != 32)
-        color = mlx_get_color_value(mlx, color);
+        color = mlx_get_color_value(mlx->mlx, color);
     while (y < 500)
     {
         while (x < 500)
