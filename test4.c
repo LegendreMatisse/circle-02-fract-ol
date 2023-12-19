@@ -31,7 +31,7 @@ int main(void)
     img.img = mlx_new_image(mlx.mlx, 500, 500);
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
                                 &img.endian);
-    cool_fractol_function(&img);
+    cool_fractol_function(&img, &mlx);
     mlx_put_image_to_window(mlx.mlx, mlx.win, img.img, 0, 0);
     mlx_hook(mlx.win, 2, 1L<<0, keypress, &mlx);
 	mlx_hook(mlx.win, 17, 1L<<17, ft_exit_wo_mess, &mlx);
