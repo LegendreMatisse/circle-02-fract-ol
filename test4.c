@@ -10,6 +10,7 @@ void    cool_fractol_function(t_data *img, t_mlx *mlx)
         color = mlx_get_color_value(mlx->mlx, color);
     while (y < 500)
     {
+        x = 0;
         while (x < 500)
         {
             int pixel = (y * img->line_length) + (x * 4);
