@@ -28,14 +28,14 @@ int main(void)
     {
         int pixel = (y * img.line_length) + (x * 4);
 
-        if (endian == 1)        // Most significant (Alpha) byte first
+        if (img.endian == 1)        // Most significant (Alpha) byte first
         {
             img.addr[pixel + 0] = (color >> 24);
             img.addr[pixel + 1] = (color >> 16) & 0xFF;
             img.addr[pixel + 2] = (color >> 8) & 0xFF;
             img.addr[pixel + 3] = (color) & 0xFF;
         }
-        else if (endian == 0)   // Least significant (Blue) byte first
+        else if (img.endian == 0)   // Least significant (Blue) byte first
         {
             img.addr[pixel + 0] = (color) & 0xFF;
             img.addr[pixel + 1] = (color >> 8) & 0xFF;
@@ -44,7 +44,7 @@ int main(void)
         }
     }
     //put the image to the window
-    mlx_put_image_to_window(mlx, win, image, 0, 0);
+    mlx_put_image_to_window(mlx, win, img.img, 0, 0);
 
     mlx_loop(mlx);
     return (0);
