@@ -26,7 +26,7 @@ void    cool_fractol_function(t_mlx *mlx)
         x_tmp = mlx->zx + mlx->zx - mlx->zy * mlx->zy + mlx->cx;
         mlx->zy = 2.0 * mlx->zx * mlx->zy + mlx->cy;
         mlx->zx = x_tmp;
-        if (fractal->zx * fractal->zx + fractal->zy * fractal->zy >= __DBL_MAX__)
+        if (mlx->zx * mlx->zx + mlx->zy * mlx->zy >= __DBL_MAX__)
             break ;
     }
     if (i == mlx->max_iterations)
@@ -35,7 +35,7 @@ void    cool_fractol_function(t_mlx *mlx)
         put_color_to_pixel(mlx, mlx->x, mlx->y, (mlx->color * i));
 }
 
-int draw_fractal(t_mlx *mlx, char *choice, double cx, double cy)
+int draw_fractal(t_mlx *mlx)
 {
     mlx->x = 0;
     mlx->y = 0;
