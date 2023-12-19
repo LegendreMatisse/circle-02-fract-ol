@@ -47,7 +47,7 @@ int main(void)
 								&img.endian);
 
     //drawing pixels and setting colours.
-    int color = 0xABCDEF;
+    int color = 0xffff00ff;
     if (img.bits_per_pixel != 32)
         color = mlx_get_color_value(mlx, color);
 
