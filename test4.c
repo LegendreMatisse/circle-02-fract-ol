@@ -12,7 +12,7 @@ void    cool_fractol_function(t_data *img)
     {
         while (x < 500)
         {
-            int pixel = (y * img.line_length) + (x * 4);
+            int pixel = (y * img->line_length) + (x * 4);
             img->addr[pixel] = color;
             x++;
         }
