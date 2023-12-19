@@ -24,6 +24,8 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
+# define SIZE 700
+
 typedef struct  s_data {
 	void    *img;
 	char    *addr;
@@ -35,6 +37,23 @@ typedef struct  s_data {
 typedef struct	s_mlx {
 	void	*mlx;
 	void	*win;
+	void	*img;
+	char    *addr;
+	int	    bits_per_pixel;
+	int     line_length;
+	int		endian;
+	int		x;
+	int		y;
+	double	zx;
+	double	zy;
+	double	cx;
+	double	cy;
+	int		color;
+	double	offset_x;
+	double	offset_y;
+	double	zoom;
+	char	*name;
+	int		max_iterations;
 }				t_mlx;
 
 /*Utilities*/
