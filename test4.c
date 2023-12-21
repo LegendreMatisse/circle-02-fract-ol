@@ -35,8 +35,8 @@ void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 {
 	int	*buffer;
 
-	buffer = mlx->pointer_to_image;
-	buffer[(y * mlx->size_line / 4) + x] = color;
+	buffer = mlx->addr;
+	buffer[(y * mlx->line_length / 4) + x] = color;
 }
 
 void    calc_mandl(t_mlx *mlx)
