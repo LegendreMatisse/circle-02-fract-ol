@@ -31,11 +31,57 @@ void    init_mlx(t_mlx *mlx)
     mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length, &mlx->endian);
 }
 
+void	put_color_to_pixel(t_fractal *mlx, int x, int y, int color)
+{
+	int	*buffer;
+
+	buffer = mlx->pointer_to_image;
+	buffer[(y * mlx->size_line / 4) + x] = color;
+}
+
+void    calc_mandl(t_mlx *mlx)
+{
+    int i;
+    double tmp;
+
+    mlx->name = "mandel";
+	i = 0;
+	mlx->zx = 0.0;
+	mlx->zy = 0.0;
+	mlx->cx = (mlx->x / mlx->zoom) + mlx->offset_x;
+	mlx->cy = (mlx->y / mlx->zoom) + mlx->offset_y;
+	while (++i < mlx->max_iterations)
+	{
+		x_temp = mlx->zx * mlx->zx - mlx->zy * mlx->zy + mlx->cx;
+		mlx->zy = 2. * mlx->zx * mlx->zy + mlx->cy;
+		mlx->zx = x_temp;
+		if (mlx->zx * mlx->zx + mlx->zy * mlx->zy >= __DBL_MAX__)
+			break ;
+	}
+	if (i == mlx->max_iterations)
+		put_color_to_pixel(fractal, mlx->x, mlx->y, 0x000000);
+	else
+		put_color_to_pixel(fractal, mlx->x, mlx->y, (mlx->color * i));
+}
+
 void	*draw_mandl(void *mlx_void)
 {
-    (void)mlx_void;
-    ft_printf("Banaan.");
-    return (0);
+    t_mlx	*mlx;
+
+    mlx = (t_mlx *)mlx_void;
+    mlx->x = 0;
+    mlx->y = 0;
+    while (mlx->x < SIZE)
+    {
+        while (mlx->y < SIZE)
+        {
+            calc_mandl(mlx);
+            mlx->y++;
+        }
+        mlx->x++;
+        mlx->y = 0;
+    }
+    return (NULL);
 }
 
 int draw_fractal(t_mlx *mlx, char *choice)
