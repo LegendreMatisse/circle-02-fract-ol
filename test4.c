@@ -21,13 +21,16 @@ void    init_fractal(t_mlx *mlx)
     mlx->offset_x = -1.21;
     mlx->offset_y = -1.21;
     mlx->max_iterations = 42;
+    mlx->bits_per_pixel = 32;
+    mlx->line_length = SIZE * 4;
+    mlx->endian = 0;
 }
 
 void    init_mlx(t_mlx *mlx)
 {
     mlx->mlx = mlx_init();
-    mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Create image test 2");
-    mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
+    mlx->win = mlx_new_window(mlx->mlx, 800, 800, "Create image test 2");
+    mlx->img = mlx_new_image(mlx->mlx, 800, 800);
     mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length, &mlx->endian);
 }
 
@@ -86,7 +89,7 @@ void	*draw_mandl(void *mlx_void)
 
 int draw_fractal(t_mlx *mlx, char *choice)
 {
-    if (ft_strncmp(choice, "mandelbrot", 11))
+    if (ft_strncmp(choice, "mandelbrot", 11) == 0)
         draw_mandl(mlx);
     mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
     return (0);    
