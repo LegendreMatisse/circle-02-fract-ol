@@ -29,8 +29,8 @@ void    init_fractal(t_mlx *mlx)
 void    init_mlx(t_mlx *mlx)
 {
     mlx->mlx = mlx_init();
-    mlx->win = mlx_new_window(mlx->mlx, 1080, 1080, "Create image test 2");
-    mlx->img = mlx_new_image(mlx->mlx, 1080, 1080);
+    mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Create image test 2");
+    mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
     mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length, &mlx->endian);
 }
 
