@@ -52,7 +52,7 @@ void    calc_mandl(t_mlx *mlx)
         if (i % 2 == 0)
 		    put_color_to_pixel(mlx, mlx->x, mlx->y, (mlx->color * i));
         else
-            put_color_to_pixel(mlx, mlx->x, mlx->y, 0x0ceff0e);
+            put_color_to_pixel(mlx, mlx->x, mlx->y, 0x0ffff8a);
     }
 }
 
