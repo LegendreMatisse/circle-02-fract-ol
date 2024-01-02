@@ -36,3 +36,14 @@ int draw_fractal(t_mlx *mlx, char *choice)
     mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
     return (0);    
 }
+
+/*A simple function that picks a color based on wether the number is even or divisible by 5.*/
+int pick_color(int i, t_mlx *mlx)
+{
+	if (i % 2 == 0)
+		return (0x0ffff00);
+	else if (i % 5 == 0)
+		return (0x0004488);
+	else
+		return (mlx->color * i)
+}

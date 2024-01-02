@@ -35,10 +35,7 @@ void    calc_mandl(t_mlx *mlx)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
 	else
     {
-        if (i % 2 == 0)
-		    put_color_to_pixel(mlx, mlx->x, mlx->y, (mlx->color * i));
-        else
-            put_color_to_pixel(mlx, mlx->x, mlx->y, 0x0ffff00);
+        put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
     }
 }
 
