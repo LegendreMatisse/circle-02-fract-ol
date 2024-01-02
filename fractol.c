@@ -16,7 +16,7 @@ void    init_fractal(t_mlx *mlx)
 {
     mlx->x = 0;
     mlx->y = 0;
-    mlx->color = 0x0bd2024;
+    mlx->color = 0x0ceff0e;
     mlx->zoom = 300;
     mlx->offset_x = -1.21;
     mlx->offset_y = -1.21;
