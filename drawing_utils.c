@@ -45,5 +45,5 @@ int pick_color(int i, t_mlx *mlx)
 	else if (i % 5 == 0)
 		return (0x0004488);
 	else
-		return (mlx->color * i)
+		return (mlx->color * i);
 }
