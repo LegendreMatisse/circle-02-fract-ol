@@ -34,9 +34,7 @@ void    calc_mandl(t_mlx *mlx)
 	if (i == mlx->max_iterations)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
 	else
-    {
         put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
-    }
 }
 
 void	*draw_mandl(void *mlx_void)

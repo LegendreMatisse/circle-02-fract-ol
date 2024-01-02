@@ -37,7 +37,7 @@ int draw_fractal(t_mlx *mlx, char *choice)
     return (0);    
 }
 
-/*A simple function that picks a color based on wether the number is even or divisible by 5.*/
+/*A simple function that picks a color based on wether the number is divisible by 7 or 89.*/
 int pick_color(int i, t_mlx *mlx)
 {
 	if (i % 7 == 0)
