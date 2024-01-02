@@ -12,20 +12,27 @@
 
 #include "fractol.h"
 
-/*This function is meant to capture keypresses send to the window when the fract-ol program is running.
-Current capture: - <ESC> to close window*/
-int	keypress(int keycode, t_mlx *mlx)
+/*This function is meant to color in a pixel on on the image.
+ *The calculation is as follows:
+ *y * mlx->line_length / 4 calculates the row, and is divided by 4 because line_length is in bytes, and we need the bit.
+ *+ x to calculate the row.*/
+void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 {
-	if (keycode == XK_Escape)
-		ft_exit_wo_mess(mlx);
-	return (0);
+	int	*buffer;
+
+	buffer = mlx->addr;
+	buffer[(y * mlx->line_length / 4) + x] = color;
 }
 
-/*This function is meant to initialise the mlx window. Nothing more, nothing less.*/
-void    init_mlx(t_mlx *mlx)
+/*This function is simple, it just runs the correct function based on choice.*/
+int draw_fractal(t_mlx *mlx, char *choice)
 {
-    mlx->mlx = mlx_init();
-    mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Fract-ol");
-    mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
-    mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length, &mlx->endian);
+    if (ft_strncmp(choice, "mandelbrot", 11) == 0)
+        draw_mandl(mlx);
+    /*else if (ft_strncmp(name, "julia", 6) == 0)
+		draw_julia(mlx);
+	else if (ft_strncmp(name, "sierpinski", 11) == 0)
+		draw_sier(mlx);*/
+    mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
+    return (0);    
 }

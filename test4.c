@@ -17,10 +17,10 @@ void    init_fractal(t_mlx *mlx)
     mlx->x = 0;
     mlx->y = 0;
     mlx->color = 0x0FCBE11;
-    mlx->zoom = 300;
+    mlx->zoom = 0;
     mlx->offset_x = -1.21;
     mlx->offset_y = -1.21;
-    mlx->max_iterations = 42;
+    mlx->max_iterations = 100;
     mlx->bits_per_pixel = 32;
     mlx->line_length = SIZE * 4;
     mlx->endian = 0;
