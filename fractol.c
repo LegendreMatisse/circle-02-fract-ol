@@ -16,7 +16,7 @@ void    init_fractal(t_mlx *mlx)
 {
     mlx->x = 0;
     mlx->y = 0;
-    mlx->color = 0x0FFFF00;
+    mlx->color = 0x0bd2024;
     mlx->zoom = 300;
     mlx->offset_x = -1.21;
     mlx->offset_y = -1.21;
@@ -48,7 +48,12 @@ void    calc_mandl(t_mlx *mlx)
 	if (i == mlx->max_iterations)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
 	else
-		put_color_to_pixel(mlx, mlx->x, mlx->y, (mlx->color * i));
+    {
+        if (i % 2 == 0)
+		    put_color_to_pixel(mlx, mlx->x, mlx->y, (mlx->color * i));
+        else
+            put_color_to_pixel(mlx, mlx->x, mlx->y, 0x0ffff00);
+    }
 }
 
 void	*draw_mandl(void *mlx_void)
