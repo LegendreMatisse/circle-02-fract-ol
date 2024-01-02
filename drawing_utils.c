@@ -42,7 +42,7 @@ int pick_color(int i, t_mlx *mlx)
 {
 	if (i % 2 == 0)
 		return (0x0ffff00);
-	else if (i % 5 == 0)
+	else if (i % 25 == 0)
 		return (0x0004488);
 	else
 		return (mlx->color * i);
