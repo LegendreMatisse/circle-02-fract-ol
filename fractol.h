@@ -71,4 +71,7 @@ void	ft_primary_arg_check(int argc, char **argv);
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);
 int		draw_fractal(t_mlx *mlx, char *choice);
 
+/*Mandelbrot*/
+void	*draw_mandl(void *mlx_void);
+
 #endif
