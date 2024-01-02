@@ -63,6 +63,7 @@ int		ft_exit_wo_mess(t_mlx *mlx);
 
 /*MLX specific functions*/
 int		keypress(int keycode, t_mlx *mlx);
+void    init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
 void	ft_primary_arg_check(int argc, char **argv);
