@@ -85,6 +85,6 @@ double ft_atof(const char *str)
             factor *= 0.1;
             str++;
         }
-    }♣
+    }
     return result * sign;
 }
