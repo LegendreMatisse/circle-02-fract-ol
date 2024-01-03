@@ -77,4 +77,8 @@ int		pick_color(int i, t_mlx *mlx);
 void	*draw_mandl(void *mlx_void);
 void    calc_mandl(t_mlx *mlx);
 
+/*Julia*/
+void    draw_julia(t_mlx *mlx);
+void    calc_julia(t_mlx *mlx);
+
 #endif
