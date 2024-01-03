@@ -38,5 +38,5 @@ void    calc_julia(t_mlx *mlx)
     if (i == mlx->max_iterations)
         put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
     else
-        put_color_to_pixel(mlx, mlx->x, mlx->y, mlx->color * (i % 255));
+        put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
 }
