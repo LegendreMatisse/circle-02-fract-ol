@@ -56,35 +56,23 @@ int	ft_exit_wo_mess(t_mlx *mlx)
 	return (0);
 }
 
-double ft_atof(const char *str)
+double	ft_atof(const char *str)
 {
-    double result = 0.0;
-    double sign = 1.0;
+	double result = 0.0;
+	double sign = 1.0;
     double factor = 0.1;
 
-    while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+    while ((*str >= 9 && *str <= 13) || *str == 32)
         str++;
-    if (*str == '-')
-    {
-        sign = -1.0;
-        str++;
-    }
-    else if (*str == '+')
-        str++;
+    if (*str == '-' || *str == '+')
+        sign = (*str++ == '-') ? -1.0 : 1.0;
     while (*str >= '0' && *str <= '9')
-    {
-        result = result * 10.0 + (*str - '0');
-        str++;
-    }
-    if (*str == '.')
-    {
-        str++;
+        result = result * 10.0 + (*str++ - '0');
+    if (*str++ == '.')
         while (*str >= '0' && *str <= '9')
         {
-            result += (*str - '0') * factor;
+            result += (*str++ - '0') * factor;
             factor *= 0.1;
-            str++;
         }
-    }
     return result * sign;
 }
