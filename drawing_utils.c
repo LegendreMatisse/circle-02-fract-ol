@@ -29,9 +29,16 @@ int draw_fractal(t_mlx *mlx, char *choice)
 {
     if (ft_strncmp(choice, "mandelbrot", 11) == 0)
         draw_mandl(mlx);
-    /*else if (ft_strncmp(name, "julia", 6) == 0)
+    else if (ft_strncmp(name, "julia", 6) == 0)
+	{
+		if (!mlx->cx && !mlx->cy)
+		{
+			mlx->cx = -0.745429;
+			mlx->cy = 0.05;
+		}
 		draw_julia(mlx);
-	else if (ft_strncmp(name, "sierpinski", 11) == 0)
+	}
+	/*else if (ft_strncmp(name, "sierpinski", 11) == 0)
 		draw_sier(mlx);*/
     mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
     return (0);    
