@@ -25,7 +25,7 @@ void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 }
 
 /*This function is simple, it just runs the correct function based on choice.*/
-int draw_fractal(t_mlx *mlx, char *choice, int x, int y)
+int draw_fractal(t_mlx *mlx, char *choice, double x, double y)
 {
     if (ft_strncmp(choice, "mandelbrot", 11) == 0)
         draw_mandl(mlx);

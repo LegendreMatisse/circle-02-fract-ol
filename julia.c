@@ -2,7 +2,7 @@
 
 #include "fractol.h"
 
-void    draw_julia(t_mlx *mlx, int x, int y)
+void    draw_julia(t_mlx *mlx, double x, double y)
 {
     mlx->x = 0;
     mlx->y = 0;
@@ -18,7 +18,7 @@ void    draw_julia(t_mlx *mlx, int x, int y)
     }
 }
 
-void    calc_julia(t_mlx *mlx, int x, int y)
+void    calc_julia(t_mlx *mlx, double x, double y)
 {
     int     i;
     double  tmp;
