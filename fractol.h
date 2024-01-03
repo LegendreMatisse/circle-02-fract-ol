@@ -70,7 +70,7 @@ void	ft_primary_arg_check(int argc, char **argv);
 
 /*Draw utilities*/
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);
-int		draw_fractal(t_mlx *mlx, char *choice);
+int		draw_fractal(t_mlx *mlx, char *choice, int x, int y);
 int		pick_color(int i, t_mlx *mlx);
 
 /*Mandelbrot*/
@@ -78,7 +78,7 @@ void	*draw_mandl(void *mlx_void);
 void    calc_mandl(t_mlx *mlx);
 
 /*Julia*/
-void    draw_julia(t_mlx *mlx);
-void    calc_julia(t_mlx *mlx);
+void    draw_julia(t_mlx *mlx, int x, int y);
+void    calc_julia(t_mlx *mlx, int x, int y);
 
 #endif
