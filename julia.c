@@ -2,7 +2,7 @@
 
 #include "fractol.h"
 
-void    draw_julia(t_mlx *mlx)
+void    draw_julia(t_mlx *mlx, int x, int y)
 {
     mlx->x = 0;
     mlx->y = 0;
@@ -10,7 +10,7 @@ void    draw_julia(t_mlx *mlx)
     {
         while (mlx->y < SIZE)
         {
-            calc_julia(mlx);
+            calc_julia(mlx, x, y);
             mlx->y++;
         }
         mlx->x++;
@@ -18,12 +18,14 @@ void    draw_julia(t_mlx *mlx)
     }
 }
 
-void    calc_julia(t_mlx *mlx)
+void    calc_julia(t_mlx *mlx, int x, int y)
 {
     int     i;
     double  tmp;
 
     mlx->name = "julia";
+    mlx->cx = x;
+    mlx->cy = y;
 	mlx->zx = mlx->x / mlx->zoom + mlx->offset_x;
 	mlx->zy = mlx->y / mlx->zoom + mlx->offset_y;
     i = 0;

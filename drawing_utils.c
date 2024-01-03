@@ -25,7 +25,7 @@ void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 }
 
 /*This function is simple, it just runs the correct function based on choice.*/
-int draw_fractal(t_mlx *mlx, char *choice)
+int draw_fractal(t_mlx *mlx, char *choice, int x, int y)
 {
     if (ft_strncmp(choice, "mandelbrot", 11) == 0)
         draw_mandl(mlx);
@@ -36,7 +36,7 @@ int draw_fractal(t_mlx *mlx, char *choice)
 			mlx->cx = -0.745429;
 			mlx->cy = 0.05;
 		}
-		draw_julia(mlx);
+		draw_julia(mlx, x, y);
 	}
 	/*else if (ft_strncmp(name, "sierpinski", 11) == 0)
 		draw_sier(mlx);*/
