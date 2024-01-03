@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     init_mlx(mlx);
     mlx_hook(mlx->win, 2, 1L<<0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L<<17, ft_exit_wo_mess, mlx);
-    draw_fractal(mlx, argv[1], argv[2], argv[3]);
+    draw_fractal(mlx, argv[1], ft_atoi(argv[2]), ft_atoi(argv[3]));
 	mlx_loop(mlx->mlx);
     return (0);
 }
