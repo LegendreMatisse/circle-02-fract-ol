@@ -39,10 +39,10 @@ int	draw_fractal(t_mlx *mlx, char *choice, double x, double y)
 		}
 		draw_julia(mlx, x, y);
 	}
-	/*else if (ft_strncmp(name, "sierpinski", 11) == 0)
-		draw_sier(mlx);*/
+	else if (ft_strncmp(name, "sierpinski", 11) == 0)
+		ft_printf("mlx");
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
-	return (0);    
+	return (0);
 }
 
 /*A simple function that picks a color based on 
