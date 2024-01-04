@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: CREATION_DATE by YOUR_NAME               #+#    #+#             */
-/*   Updated: MODIFIED_DATE by YOUR_NAME              ###   ########.fr       */
+/*   Created: 2024/01/05 00:02:32 by mlegendr          #+#    #+#             */
+/*   Updated: 2024/01/05 00:03:01 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
