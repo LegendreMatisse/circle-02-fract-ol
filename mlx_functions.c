@@ -12,7 +12,8 @@
 
 #include "fractol.h"
 
-/*This function is meant to capture keypresses send to the window when the fract-ol program is running.
+/*This function is meant to capture keypresses send 
+to the window when the fract-ol program is running.
 Current capture: - <ESC> to close window*/
 int	keypress(int keycode, t_mlx *mlx)
 {
@@ -22,10 +23,11 @@ int	keypress(int keycode, t_mlx *mlx)
 }
 
 /*This function is meant to initialise the mlx window. Nothing more, nothing less.*/
-void    init_mlx(t_mlx *mlx)
+void	init_mlx(t_mlx *mlx)
 {
-    mlx->mlx = mlx_init();
-    mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Fract-ol");
-    mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
-    mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length, &mlx->endian);
+	mlx->mlx = mlx_init();
+	mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Fract-ol");
+	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, 
+									&mlx->line_length, &mlx->endian);
 }
