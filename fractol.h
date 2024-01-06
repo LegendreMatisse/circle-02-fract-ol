@@ -66,7 +66,7 @@ double	ft_atof(const char *str);
 
 /*MLX specific functions*/
 int		keypress(int keycode, t_mlx *mlx);
-void    init_mlx(t_mlx *mlx);
+void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
 void	ft_primary_arg_check(int argc, char **argv);
@@ -78,10 +78,10 @@ int		pick_color(int i, t_mlx *mlx);
 
 /*Mandelbrot*/
 void	*draw_mandl(void *mlx_void);
-void    calc_mandl(t_mlx *mlx);
+void	calc_mandl(t_mlx *mlx);
 
 /*Julia*/
-void    draw_julia(t_mlx *mlx, double x, double y);
-void    calc_julia(t_mlx *mlx, double x, double y);
+void	draw_julia(t_mlx *mlx, double x, double y);
+void	calc_julia(t_mlx *mlx, double x, double y);
 
 #endif
