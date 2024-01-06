@@ -65,8 +65,6 @@ double	ft_atof(const char *str)
 	result = 0.0;
 	sign = 1.0;
 	factor = 0.1;
-	/*while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;*/
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
