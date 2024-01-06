@@ -39,7 +39,7 @@ void	calc_mandl(t_mlx *mlx)
 
 void	*draw_mandl(void *mlx_void)
 {
-    t_mlx	*mlx;
+	t_mlx	*mlx;
 
 	mlx = (t_mlx *)mlx_void;
 	mlx->x = 0;
