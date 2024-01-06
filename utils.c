@@ -58,21 +58,24 @@ int	ft_exit_wo_mess(t_mlx *mlx)
 
 double	ft_atof(const char *str)
 {
-	double result = 0.0;
-	double sign = 1.0;
-    double factor = 0.1;
+	double	result;
+	double	sign;
+	double	factor;
 
-    while ((*str >= 9 && *str <= 13) || *str == 32)
-        str++;
-    if (*str == '-' || *str == '+')
-        sign = (*str++ == '-') ? -1.0 : 1.0;
-    while (*str >= '0' && *str <= '9')
-        result = result * 10.0 + (*str++ - '0');
-    if (*str++ == '.')
-        while (*str >= '0' && *str <= '9')
-        {
-            result += (*str++ - '0') * factor;
-            factor *= 0.1;
-        }
-    return result * sign;
+	result = 0.0;
+	sign = 1.0;
+	factor = 0.1;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+		sign = (*str++ == '-') ? -1.0 : 1.0;
+	while (*str >= '0' && *str <= '9')
+		result = result * 10.0 + (*str++ - '0');
+	if (*str++ == '.')
+		while (*str >= '0' && *str <= '9')
+		{
+			result += (*str++ - '0') * factor;
+			factor *= 0.1;
+		}
+	return (result * sign);
 }
