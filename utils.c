@@ -76,10 +76,12 @@ double	ft_atof(const char *str)
 	while (*str >= '0' && *str <= '9')
 		result = result * 10.0 + (*str++ - '0');
 	if (*str++ == '.')
+	{
 		while (*str >= '0' && *str <= '9')
 		{
 			result += (*str++ - '0') * factor;
 			factor *= 0.1;
 		}
+	}
 	return (result * sign);
 }
