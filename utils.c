@@ -68,11 +68,11 @@ double	ft_atof(const char *str)
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '-' || *str == '+')
-    {
-        if (*str == '-')
-            sign = -1.0;
-        str++;
-    }
+	{
+		if (*str == '-')
+			sign = -1.0;
+		str++;
+	}
 	while (*str >= '0' && *str <= '9')
 		result = result * 10.0 + (*str++ - '0');
 	if (*str++ == '.')
