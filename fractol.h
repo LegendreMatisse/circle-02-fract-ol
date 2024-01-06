@@ -26,7 +26,8 @@
 
 # define SIZE 700
 
-typedef struct  s_data {
+typedef struct	s_data 
+{
 	void    *img;
 	char    *addr;
 	int	    bits_per_pixel;
@@ -34,7 +35,8 @@ typedef struct  s_data {
 	int		endian;
 }				t_data;
 
-typedef struct	s_mlx {
+typedef struct	s_mlx
+{
 	void	*mlx;
 	void	*win;
 	void	*img;
