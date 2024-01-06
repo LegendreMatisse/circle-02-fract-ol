@@ -6,7 +6,7 @@
 /*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:38:34 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/20 15:39:25 by mlegendr         ###   ########.fr       */
+/*   Updated: 2024/01/06 20:08:16 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	init_mlx(t_mlx *mlx)
 	mlx->mlx = mlx_init();
 	mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Fract-ol");
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
-	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length, &mlx->endian);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel,
+			&mlx->line_length, &mlx->endian);
 }
