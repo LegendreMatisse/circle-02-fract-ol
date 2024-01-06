@@ -12,12 +12,12 @@
 
 #include "fractol.h"
 
-void    calc_mandl(t_mlx *mlx)
+void	calc_mandl(t_mlx *mlx)
 {
-    int i;
-    double tmp;
+	int		i;
+	double	tmp;
 
-    mlx->name = "mandel";
+	mlx->name = "mandel";
 	i = 0;
 	mlx->zx = 0.0;
 	mlx->zy = 0.0;
@@ -34,25 +34,25 @@ void    calc_mandl(t_mlx *mlx)
 	if (i == mlx->max_iterations)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
 	else
-        put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
+		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
 }
 
 void	*draw_mandl(void *mlx_void)
 {
     t_mlx	*mlx;
 
-    mlx = (t_mlx *)mlx_void;
-    mlx->x = 0;
-    mlx->y = 0;
-    while (mlx->x < SIZE)
-    {
-        while (mlx->y < SIZE)
-        {
-            calc_mandl(mlx);
-            mlx->y++;
-        }
-        mlx->x++;
-        mlx->y = 0;
-    }
-    return (NULL);
+	mlx = (t_mlx *)mlx_void;
+	mlx->x = 0;
+	mlx->y = 0;
+	while (mlx->x < SIZE)
+	{
+		while (mlx->y < SIZE)
+		{
+			calc_mandl(mlx);
+			mlx->y++;
+		}
+		mlx->x++;
+		mlx->y = 0;
+	}
+	return (NULL);
 }
