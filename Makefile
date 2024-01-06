@@ -6,7 +6,7 @@
 #    By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 17:23:32 by mlegendr          #+#    #+#              #
-#    Updated: 2023/12/18 17:10:54 by mlegendr         ###   ########.fr        #
+#    Updated: 2024/01/06 20:52:01 by matisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,16 @@ MLX_PATH	=	minilibx-linux/
 MLX_NAME	=	libmlx_Linux.a
 MLX			=	$(MLX_PATH)$(MLX_NAME)
 
-#RAND		=	$(shell shuf -i 100-231 -n 1)
-#RAND2		=	$(shell shuf -i 100-105 -n 1)
+RAND		=	$(shell shuf -i 100-231 -n 1)
+RAND2		=	$(shell shuf -i 100-105 -n 1)
 
-#GREEN		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
-#YELLOW		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
-#RESET		=	\033[0m
-
-GREEN		=	\e[0;32m
-YELLOW		=	\e[0;33m
+GREEN		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
+YELLOW		=	\e[$(call RAND2)m\e[K\e[1;4;6;38:5:$(call RAND)m
 RESET		=	\033[0m
+
+#GREEN		=	\e[0;32m
+#YELLOW		=	\e[0;33m
+#RESET		=	\033[0m
 
 $(OBJ_DIR)/%.o:	%.c
 				@$(CC) $(CFLAGS) -c $< -o $@
