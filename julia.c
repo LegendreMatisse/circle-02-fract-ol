@@ -6,7 +6,7 @@
 /*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:38:59 by mlegendr          #+#    #+#             */
-/*   Updated: 2024/01/07 17:22:52 by matisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 00:07:24 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	draw_julia(t_mlx *mlx)
 	{
 		while (mlx->y < SIZE)
 		{
-			calc_julia(mlx, x, y);
+			calc_julia(mlx);
 			mlx->y++;
 		}
 		mlx->x++;
