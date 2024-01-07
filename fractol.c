@@ -14,6 +14,10 @@
 
 void	init_fractal(t_mlx *mlx)
 {
+	mlx->mlx = NULL;
+	mlx->win = NULL;
+	mlx->img = NULL;
+	mlx->addr = NULL;
 	mlx->bpp = 0;
 	mlx->line_len = 0;
 	mlx->endian = 0;
