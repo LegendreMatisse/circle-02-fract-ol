@@ -60,8 +60,8 @@ void	draw_mandl(t_mlx *mlx)
 	{
 		while (mlx->y < SIZE)
 		{
-			mlx->zx = (x - SIZE / 2) / (0.5 * mlx->zoom * SIZE);
-            mlx->zy = (y - SIZE / 2) / (0.5 * mlx->zoom * SIZE);
+			mlx->zx = (mlx->x - SIZE / 2) / (0.5 * mlx->zoom * SIZE);
+            mlx->zy = (mlx->y - SIZE / 2) / (0.5 * mlx->zoom * SIZE);
 			calc_mandl(mlx);
 			mlx->y++;
 		}
