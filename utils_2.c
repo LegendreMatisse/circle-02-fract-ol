@@ -72,8 +72,6 @@ void zoom(t_mlx *mlx, char direction)
 		mlx->zoom *= 1.1;
 	else
 		mlx->zoom /= 1.1;
-	free(mlx->img);
-	free(mlx->addr);
 	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
