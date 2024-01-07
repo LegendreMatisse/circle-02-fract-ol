@@ -37,6 +37,8 @@ void	draw_julia(t_mlx *mlx)
 	{
 		while (mlx->y < SIZE)
 		{
+			mlx->zx = (x - SIZE / 2) / (0.5 * mlx->zoom * SIZE);
+			mlx->zy = (y - SIZE / 2) / (0.5 * mlx->zoom * SIZE);
 			calc_julia(mlx);
 			mlx->y++;
 		}
