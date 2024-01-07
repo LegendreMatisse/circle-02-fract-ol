@@ -51,11 +51,8 @@ void	calc_mandl(t_mlx *mlx)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
 }
 
-void	*draw_mandl(void *mlx_void)
+void	draw_mandl(t_mlx *mlx)
 {
-	t_mlx	*mlx;
-
-	mlx = (t_mlx *)mlx_void;
 	mlx->x = 0;
 	mlx->y = 0;
 	while (mlx->x < SIZE)
@@ -68,5 +65,4 @@ void	*draw_mandl(void *mlx_void)
 		mlx->x++;
 		mlx->y = 0;
 	}
-	return (NULL);
 }

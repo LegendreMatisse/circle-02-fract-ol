@@ -12,6 +12,30 @@
 
 #include "fractol.h"
 
+void	init_julia(t_mlx *mlx, int x, int y)
+{
+	if (!mlx->cx && !mlx->cy)
+	{
+		mlx->cx = -0.745429;
+		mlx->cy = 0.05;
+	}
+	else
+	{
+		mlx->cx = x;
+		mlx->cy = y;
+	}
+	mlx->x = 0;
+	mlx->y = 0;
+	mlx->color = 0x0bd2024;
+	mlx->zoom = 300;
+	mlx->offset_x = -1.21;
+	mlx->offset_y = -1.21;
+	mlx->max_iterations = 100;
+	mlx->bpp = 32;
+	mlx->line_len = SIZE * 4;
+	mlx->endian = 0;
+}
+
 void	draw_julia(t_mlx *mlx, double x, double y)
 {
 	mlx->x = 0;

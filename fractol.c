@@ -25,8 +25,8 @@ void	init_fractal(t_mlx *mlx)
 	mlx->y = 0;
 	mlx->zx = 0;
 	mlx->zy = 0;
-	mlx->cx = 0;
-	mlx->cy = 0;
+	mlx->cx = NULL;
+	mlx->cy = NULL;
 	mlx->color = 0;
 	mlx->offset_x = 0;
 	mlx->offset_y = 0;
