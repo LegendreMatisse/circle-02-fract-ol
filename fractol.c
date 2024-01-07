@@ -39,8 +39,10 @@ int	main(int argc, char **argv)
 {
 	t_mlx	*mlx;
 
-	(void)argc;
+	ft_primary_arg_check(argc, argv);
 	mlx = malloc(sizeof(t_mlx));
+	if (!mlx)
+		return (ft_exit_w_mess("Malloc error", mlx, 1));
 	init_fractal(mlx);
 	init_mlx(mlx);
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
