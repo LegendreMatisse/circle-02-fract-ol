@@ -6,7 +6,7 @@
 /*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:02:32 by mlegendr          #+#    #+#             */
-/*   Updated: 2024/01/05 00:03:01 by matisse          ###   ########.fr       */
+/*   Updated: 2024/01/07 16:39:19 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	init_fractal(t_mlx *mlx)
 	mlx->x = 0;
 	mlx->y = 0;
 	mlx->color = 0x0bd2024;
-	mlx->zoom = 300;
-	mlx->offset_x = 0;
-	mlx->offset_y = 0;
+	mlx->zoom = 275;
+	mlx->offset_x = -2;
+	mlx->offset_y = -1.30;
 	mlx->max_iterations = 100;
 	mlx->bpp = 32;
 	mlx->line_len = SIZE * 4;
