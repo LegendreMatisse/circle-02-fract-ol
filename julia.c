@@ -14,11 +14,10 @@
 
 void	init_julia(t_mlx *mlx, int x, int y)
 {
-	if (!x && !y)
-	{
+	if (x == 10)
 		mlx->cx = -0.745429;
+	if (y == 10)
 		mlx->cy = 0.05;
-	}
 	else
 	{
 		mlx->cx = x;
