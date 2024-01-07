@@ -12,10 +12,12 @@
 
 #include "fractol.h"
 
-void	init_julia(t_mlx *mlx)
+void	init_julia(t_mlx *mlx, double x, double y)
 {
 	mlx->x = 0;
 	mlx->y = 0;
+	mlx->cx = x;
+	mlx->cy = y;
 	mlx->color = 0x0bd2024;
 	mlx->zoom = 275;
 	mlx->offset_x = -1.21;
