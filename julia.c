@@ -26,6 +26,7 @@ void	init_julia(t_mlx *mlx, double x, double y)
 	mlx->bpp = 32;
 	mlx->line_len = SIZE * 4;
 	mlx->endian = 0;
+	mlx->name = "julia";
 }
 
 void	draw_julia(t_mlx *mlx)

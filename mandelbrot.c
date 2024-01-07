@@ -24,6 +24,7 @@ void	init_mandel(t_mlx *mlx)
 	mlx->bpp = 32;
 	mlx->line_len = SIZE * 4;
 	mlx->endian = 0;
+	mlx->name = "mandelbrot";
 }
 
 void	calc_mandl(t_mlx *mlx)

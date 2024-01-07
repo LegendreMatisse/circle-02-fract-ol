@@ -20,9 +20,9 @@ int	keypress(int keycode, t_mlx *mlx)
 	if (keycode == XK_Escape)
 		ft_exit_wo_mess(mlx);
 	if (keycode == XK_KP_Add)
-		mlx->zoom *= 1.1;
+		zoom(mlx, '+');
 	if (keycode == XK_KP_Subtract)
-		mlx->zoom /= 1.1;
+		zoom(mlx, '-');
 	return (0);
 }
 
