@@ -18,8 +18,8 @@ CFLAGS		=	-Wall -Werror -Wextra -g
 AR			=	ar rcs
 RM			=	rm -rf
 
-SRCS		=	utils.c mlx_functions.c drawing_utils.c \
-				fractol.c mandelbrot.c julia.c
+SRCS		=	utils_1.c mlx_functions.c drawing_utils.c \
+				fractol.c mandelbrot.c julia.c utils_2.c
 
 OBJ_DIR		=	obj
 OBJS		=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
