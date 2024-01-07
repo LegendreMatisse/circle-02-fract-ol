@@ -29,7 +29,7 @@ void	ft_primary_arg_check(int argc, char **argv)
 	else
 	{
 		if (ft_name_check(argv[1]) == 1)
-			ft_exit_w_mess("Invalid argument. Try <mandelbrot>,  <julia>", NULL, 1);
+			ft_exit_w_mess("Invalid argument. Try <mandelbrot>, <julia>", NULL, 1);
 	}
 }
 
