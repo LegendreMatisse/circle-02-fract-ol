@@ -61,7 +61,7 @@ void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
 void	ft_primary_arg_check(int argc, char **argv);
-void	ft_secondary_arg_check(int argc, char **argv, t_mlx *mlx);
+void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y);
 
 /*Draw utilities*/
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);

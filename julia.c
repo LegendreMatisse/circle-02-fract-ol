@@ -14,7 +14,7 @@
 
 void	init_julia(t_mlx *mlx, int x, int y)
 {
-	if (!mlx->cx && !mlx->cy)
+	if (!x && !y)
 	{
 		mlx->cx = -0.745429;
 		mlx->cy = 0.05;

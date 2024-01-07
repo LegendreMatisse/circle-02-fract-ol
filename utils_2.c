@@ -12,9 +12,16 @@
 
 #include "fractol.h"
 
-void	ft_secondary_arg_check(int argc, char **argv, t_mlx *mlx)
+void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y)
 {
-	(void)mlx;
-	(void)argv;
-	ft_printf("argc: %d\n", argc);
+	if (argc == 4)
+	{
+		*x = ft_atof(argv[2]);
+		*y = ft_atof(argv[3]);
+	}
+	else
+	{
+		*x = 0;
+		*y = 0;
+	}
 }

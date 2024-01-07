@@ -38,18 +38,22 @@ void	init_fractal(t_mlx *mlx)
 int	main(int argc, char **argv)
 {
 	t_mlx	*mlx;
+	double		x;
+	double		y;
 
 	mlx = NULL;
+	x = 0;
+	y = 0;
 	ft_primary_arg_check(argc, argv);
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (ft_exit_w_mess("Malloc error", mlx, 1));
 	init_fractal(mlx);
 	init_mlx(mlx);
-	ft_secondary_arg_check(argc, argv, mlx);
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L << 17, ft_exit_wo_mess, mlx);
-	draw_fractal(mlx, argv[1], ft_atof(argv[2]), ft_atof(argv[3]));
+	ft_secondary_arg_check(argc, argv, &x, &y);
+	draw_fractal(mlx, argv[1], x, y);
 	mlx_loop(mlx->mlx);
 	return (0);
 }
