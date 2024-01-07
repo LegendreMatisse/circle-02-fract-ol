@@ -6,7 +6,7 @@
 /*   By: mlegendr <mlegendr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:04:23 by mlegendr          #+#    #+#             */
-/*   Updated: 2023/12/18 18:47:38 by mlegendr         ###   ########.fr       */
+/*   Updated: 2024/01/07 23:27:44 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
 void	ft_primary_arg_check(int argc, char **argv);
-void	ft_secondary_arg_check(int argc, char **argv)
+void	ft_secondary_arg_check(int argc, char **argv, t_mlx *mlx);
 
 /*Draw utilities*/
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);
