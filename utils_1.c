@@ -24,7 +24,7 @@ int	ft_name_check(char *name)
 
 void	ft_primary_arg_check(int argc, char **argv)
 {
-	if (argc == 2 || argc == 4)
+	if (argc != 2 || argc != 4)
 		ft_exit_w_mess("Incorrect usage. Try ./fractol <fractal>", NULL, 1);
 	else
 	{
