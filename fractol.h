@@ -68,6 +68,7 @@ int		draw_fractal(t_mlx *mlx, char *choice, double x, double y);
 int		pick_color(int i, t_mlx *mlx);
 
 /*Mandelbrot*/
+void	init_mandel(t_mlx *mlx);
 void	*draw_mandl(void *mlx_void);
 void	calc_mandl(t_mlx *mlx);
 

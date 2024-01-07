@@ -29,7 +29,10 @@ void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 int	draw_fractal(t_mlx *mlx, char *choice, double x, double y)
 {
 	if (ft_strncmp(choice, "mandelbrot", 11) == 0)
+	{
+		init_mandel(mlx);
 		draw_mandl(mlx);
+	}
 	else if (ft_strncmp(choice, "julia", 6) == 0)
 	{
 		if (!mlx->cx && !mlx->cy)
@@ -39,8 +42,6 @@ int	draw_fractal(t_mlx *mlx, char *choice, double x, double y)
 		}
 		draw_julia(mlx, x, y);
 	}
-	else if (ft_strncmp(choice, "sierpinski", 11) == 0)
-		ft_printf("mlx");
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 	return (0);
 }

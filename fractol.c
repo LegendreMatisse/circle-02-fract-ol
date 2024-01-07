@@ -14,16 +14,21 @@
 
 void	init_fractal(t_mlx *mlx)
 {
+	mlx->bpp = 0;
+	mlx->line_len = 0;
+	mlx->endian = 0;
 	mlx->x = 0;
 	mlx->y = 0;
-	mlx->color = 0x0bd2024;
-	mlx->zoom = 275;
-	mlx->offset_x = -2;
-	mlx->offset_y = -1.30;
-	mlx->max_iterations = 100;
-	mlx->bpp = 32;
-	mlx->line_len = SIZE * 4;
-	mlx->endian = 0;
+	mlx->zx = 0;
+	mlx->zy = 0;
+	mlx->cx = 0;
+	mlx->cy = 0;
+	mlx->color = 0;
+	mlx->offset_x = 0;
+	mlx->offset_y = 0;
+	mlx->zoom = 0;
+	mlx->name = NULL;
+	mlx->max_iterations = 0;
 }
 
 int	main(int argc, char **argv)
