@@ -22,7 +22,7 @@ void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 	int	*buffer;
 
 	buffer = mlx->addr;
-	buffer[(y * mlx->line_length / 4) + x] = color;
+	buffer[(y * mlx->line_len / 4) + x] = color;
 }
 
 /*This function is simple, it just runs the correct function based on choice.*/

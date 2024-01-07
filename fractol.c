@@ -21,8 +21,8 @@ void	init_fractal(t_mlx *mlx)
 	mlx->offset_x = -1.21;
 	mlx->offset_y = -1.21;
 	mlx->max_iterations = 100;
-	mlx->bits_per_pixel = 32;
-	mlx->line_length = SIZE * 4;
+	mlx->bpp = 32;
+	mlx->line_len = SIZE * 4;
 	mlx->endian = 0;
 }
 
