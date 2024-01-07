@@ -35,8 +35,8 @@ int	draw_fractal(t_mlx *mlx, char *choice, double x, double y)
 	}
 	else if (ft_strncmp(choice, "julia", 6) == 0)
 	{
-		init_julia(mlx, x, y);
-		draw_julia(mlx, x, y);
+		init_julia(mlx);
+		draw_julia(mlx);
 	}
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 	return (0);

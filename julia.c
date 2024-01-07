@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void	init_julia(t_mlx *mlx, int x, int y)
+void	init_julia(t_mlx *mlx)
 {
 	mlx->x = 0;
 	mlx->y = 0;
@@ -26,7 +26,7 @@ void	init_julia(t_mlx *mlx, int x, int y)
 	mlx->endian = 0;
 }
 
-void	draw_julia(t_mlx *mlx, double x, double y)
+void	draw_julia(t_mlx *mlx)
 {
 	mlx->x = 0;
 	mlx->y = 0;
@@ -42,14 +42,12 @@ void	draw_julia(t_mlx *mlx, double x, double y)
 	}
 }
 
-void	calc_julia(t_mlx *mlx, double x, double y)
+void	calc_julia(t_mlx *mlx)
 {
 	int		i;
 	double	tmp;
 
 	mlx->name = "julia";
-	mlx->cx = x;
-	mlx->cy = y;
 	mlx->zx = mlx->x / mlx->zoom + mlx->offset_x;
 	mlx->zy = mlx->y / mlx->zoom + mlx->offset_y;
 	i = 0;
