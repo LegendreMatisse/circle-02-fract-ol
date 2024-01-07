@@ -35,7 +35,7 @@ int	draw_fractal(t_mlx *mlx, char *choice, double x, double y)
 	}
 	else if (ft_strncmp(choice, "julia", 6) == 0)
 	{
-		init_julia(mlx);
+		init_julia(mlx, x, y);
 		if (!mlx->cx && !mlx->cy)
 		{
 			mlx->cx = -0.745429;
