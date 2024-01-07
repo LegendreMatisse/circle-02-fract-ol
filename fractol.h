@@ -54,6 +54,7 @@ void	ft_print_contrl(void);
 int		ft_exit_w_mess(char *str, t_mlx *mlx, int error);
 int		ft_exit_wo_mess(t_mlx *mlx);
 double	ft_atof(const char *str);
+int		ft_isfloat(const char *str);
 
 /*MLX specific functions*/
 int		keypress(int keycode, t_mlx *mlx);
