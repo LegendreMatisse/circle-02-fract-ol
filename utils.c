@@ -18,8 +18,6 @@ int	ft_name_check(char *name)
 		return (0);
 	else if (ft_strncmp(name, "julia", 6) == 0)
 		return (0);
-	else if (ft_strncmp(name, "sierpinski", 11) == 0)
-		return (0);
 	else
 		return (1);
 }
@@ -31,10 +29,7 @@ void	ft_primary_arg_check(int argc, char **argv)
 	else
 	{
 		if (ft_name_check(argv[1]) == 1)
-		{
-			ft_printf("Invalid argument. Try <mandelbrot>, ");
-			ft_exit_w_mess("<julia> or <sierpinski>", NULL, 1);
-		}
+			ft_exit_w_mess("Invalid argument. Try <mandelbrot>,  <julia>", NULL, 1);
 	}
 }
 
