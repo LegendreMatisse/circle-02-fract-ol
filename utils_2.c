@@ -32,7 +32,7 @@ void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y)
 			*y = ft_atof(argv[3]);
 			if (*x < -4 || *x > 4 || *y < -4 || *y > 4)
 			{
-				ft_exit_w_mess("Invalid input. Try any value between -4 and 4.", NULL, 1);
+				ft_exit_w_mess("Try any value between -4 and 4.", NULL, 1);
 			}
 		}
 	}

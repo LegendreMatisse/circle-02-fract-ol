@@ -42,8 +42,8 @@ int	main(int argc, char **argv)
 	double		y;
 
 	mlx = NULL;
-	x = 0;
-	y = 0;
+	x = 0.0;
+	y = 0.0;
 	ft_primary_arg_check(argc, argv);
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
