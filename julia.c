@@ -6,7 +6,7 @@
 /*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:38:59 by mlegendr          #+#    #+#             */
-/*   Updated: 2024/01/06 16:39:37 by matisse          ###   ########.fr       */
+/*   Updated: 2024/01/07 17:22:52 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	init_julia(t_mlx *mlx, int x, int y)
 	mlx->x = 0;
 	mlx->y = 0;
 	mlx->color = 0x0bd2024;
-	mlx->zoom = 300;
+	mlx->zoom = 275;
 	mlx->offset_x = -1.21;
 	mlx->offset_y = -1.21;
 	mlx->max_iterations = 100;
