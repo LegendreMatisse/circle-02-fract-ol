@@ -20,7 +20,8 @@ void	init_julia(t_mlx *mlx, double x, double y)
 	mlx->cy = y;
 	mlx->color = 0x0bd2024;
 	//mlx->zoom = 275;
-	mlx->offset_x = -1.21;
+	//mlx->offset_x = -1.21;
+	mlx->offset_x = -1.21 - 250 / mlx->zoom;
 	mlx->offset_y = -1.21;
 	mlx->max_iterations = 100;
 	mlx->bpp = 32;
@@ -31,8 +32,8 @@ void	init_julia(t_mlx *mlx, double x, double y)
 
 void	draw_julia(t_mlx *mlx)
 {
-	mlx->x = 500;
-	mlx->y = 500;
+	mlx->x = 0;
+	mlx->y = 0;
 	while (mlx->x < SIZE)
 	{
 		while (mlx->y < SIZE)
