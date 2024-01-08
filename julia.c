@@ -16,12 +16,12 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 {
 	if (function == 'm')
 	{
+		mlx->x = 0;
+		mlx->y = 0;
 		mlx->zoom = 200;
 		mlx->offset_x = -1.71;
 		mlx->offset_y = -1.71;
 	}
-	mlx->x = 0;
-	mlx->y = 0;
 	mlx->cx = x;
 	mlx->cy = y;
 	mlx->color = 0x0bd2024;

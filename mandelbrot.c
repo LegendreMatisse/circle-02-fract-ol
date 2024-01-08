@@ -16,12 +16,12 @@ void	init_mandel(t_mlx *mlx, char function)
 {
 	if (function == 'm')
 	{
+		mlx->x = 0;
+		mlx->y = 0;
 		mlx->zoom = 275;
 		mlx->offset_x = -2;
 		mlx->offset_y = -1.30;
 	}
-	mlx->x = 0;
-	mlx->y = 0;
 	mlx->color = 0x0bd2024;
 	mlx->max_iterations = 100;
 	mlx->bpp = 32;
