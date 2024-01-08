@@ -74,10 +74,11 @@ int	main(int argc, char **argv)
 	init_mlx(mlx);
 	mlx->cx = x;
 	mlx->cy = y;
+	draw_fractal(mlx, argv[1], 'm');
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L << 17, exit_wo_mess, mlx);
 	mlx_mouse_hook(mlx->win, mouse, mlx);
-	draw_fractal(mlx, argv[1], 'm');
+	mlx_loop_hook(mlx->win, redraw, mlx);
 	mlx_loop(mlx->mlx);
 	return (0);
 }
