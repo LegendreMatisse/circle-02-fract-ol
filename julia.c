@@ -31,8 +31,8 @@ void	init_julia(t_mlx *mlx, double x, double y)
 
 void	draw_julia(t_mlx *mlx)
 {
-	mlx->x = 0;
-	mlx->y = 0;
+	mlx->x = 500;
+	mlx->y = 500;
 	while (mlx->x < SIZE)
 	{
 		while (mlx->y < SIZE)
