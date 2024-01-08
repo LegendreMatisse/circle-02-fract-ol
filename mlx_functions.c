@@ -15,7 +15,7 @@
 /*This function is meant to capture keypresses send 
 to the window when the fract-ol program is running.
 Current capture: - <ESC> to close window*/
-int	keypress(int keycode, t_mlx *mlx, char function)
+int	keypress(int keycode, t_mlx *mlx)
 {
 	if (keycode == XK_Escape)
 		ft_exit_wo_mess(mlx);
