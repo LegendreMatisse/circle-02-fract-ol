@@ -73,6 +73,7 @@ void zoom(t_mlx *mlx, char direction)
 		mlx->zoom = mlx->zoom + 10;
 	else
 		mlx->zoom = mlx->zoom - 10;
+}
 
 void	move(t_mlx *mlx, char direction)
 {
