@@ -32,7 +32,7 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 	mlx->name = "julia";
 }
 
-void	draw_julia(t_mlx *mlx, char color)
+void	draw_julia(t_mlx *mlx)
 {
 	mlx->x = 0;
 	mlx->y = 0;
@@ -40,7 +40,7 @@ void	draw_julia(t_mlx *mlx, char color)
 	{
 		while (mlx->y < SIZE)
 		{
-			calc_julia(mlx, color);
+			calc_julia(ml);
 			mlx->y++;
 		}
 		mlx->x++;
@@ -48,7 +48,7 @@ void	draw_julia(t_mlx *mlx, char color)
 	}
 }
 
-void	calc_julia(t_mlx *mlx, char color)
+void	calc_julia(t_mlx *mlx)
 {
 	int		i;
 	double	tmp;
@@ -68,5 +68,5 @@ void	calc_julia(t_mlx *mlx, char color)
 	if (i == mlx->max_iterations)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
 	else
-		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx, color));
+		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
 }

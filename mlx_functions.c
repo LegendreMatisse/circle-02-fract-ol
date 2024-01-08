@@ -41,11 +41,7 @@ int	keypress(int keycode, t_mlx *mlx)
 		change_iterations(mlx, 'u');
 	if (keycode == XK_a)
 		change_iterations(mlx, 'd');
-	if (keycode == XK_c)
-		redraw(mlx, 'f');
-	if (keycode == XK_s)
-		redraw(mlx, 's');
-	redraw(mlx, 's');
+	redraw(mlx);
 	return (0);
 }
 
@@ -68,6 +64,6 @@ int	mouse(int mousecode, int x, int y, t_mlx *mlx)
 		zoom(mlx, '+');
 	else if (mousecode == S_DOWN)
 		zoom(mlx, '-');
-	redraw(mlx, 's');
+	redraw(mlx);
 	return (0);
 }
