@@ -79,12 +79,12 @@ int		pick_color(int i, t_mlx *mlx);
 
 /*Mandelbrot*/
 void	init_mandel(t_mlx *mlx, char function);
-void	draw_mandl(t_mlx *mlx);
-void	calc_mandl(t_mlx *mlx);
+void	draw_mandl(t_mlx *mlx, char color);
+void	calc_mandl(t_mlx *mlx, char color);
 
 /*Julia*/
 void	init_julia(t_mlx *mlx, double x, double y, char function);
-void	draw_julia(t_mlx *mlx);
-void	calc_julia(t_mlx *mlx);
+void	draw_julia(t_mlx *mlx, char color);
+void	calc_julia(t_mlx *mlx, char color);
 
 #endif
