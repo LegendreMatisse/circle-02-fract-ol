@@ -91,6 +91,8 @@ void	move(t_mlx *mlx, char direction)
 
 void	free_mlx(t_mlx *mlx)
 {
+	if (mlx == NULL)
+		return ;
 	if (mlx->img)
 		mlx_destroy_image(mlx->mlx, mlx->img);
 	if (mlx->win)
