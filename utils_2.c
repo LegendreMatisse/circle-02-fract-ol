@@ -21,11 +21,8 @@ void	secondary_arg_check(int argc, char **argv, double *x, double *y)
 	}
 	else
 	{
-		if (argc < 4)
-		{
-			*x = -0.745429;
-			*y = 0.05;
-		}
+		*x = -0.745429;
+		*y = 0.05;
 		else
 		{
 			if (!ft_isfloat(argv[2]) || !ft_isfloat(argv[3]))
