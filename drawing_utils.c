@@ -47,9 +47,9 @@ int	draw_fractal(t_mlx *mlx, char *choice, char function)
 int	pick_color(int i, t_mlx *mlx)
 {
 	if (i % 7 == 0)
-		return (0x000000);
+		return (0x0ffff00);
 	else if (i % 89 == 0)
-		return (0x000000);
+		return (0x0004488);
 	else
-		return (0x0bd2024);
+		return (mlx->color * i);
 }
