@@ -11,18 +11,15 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
 void	init_julia(t_mlx *mlx, double x, double y, char function)
 {
 	if (function == 'm')
 	{
 		mlx->zoom = 200;
-		mlx->offset_x = -1.21;
-		mlx->offset_y = -1.21;
+		mlx->offset_x = -1.71;
+		mlx->offset_y = -1.71;
 	}
-	printf("offset_x = %f\n", mlx->offset_x);
-	printf("offset_y = %f\n", mlx->offset_y);
 	mlx->x = 0;
 	mlx->y = 0;
 	mlx->cx = x;
