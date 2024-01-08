@@ -21,11 +21,11 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 		mlx->zoom = 200;
 		mlx->offset_x = -1.71;
 		mlx->offset_y = -1.71;
+		mlx->max_iterations = 100;
 	}
 	mlx->cx = x;
 	mlx->cy = y;
 	mlx->color = 0x0bd2024;
-	mlx->max_iterations = 100;
 	mlx->bpp = 32;
 	mlx->line_len = SIZE * 4;
 	mlx->endian = 0;

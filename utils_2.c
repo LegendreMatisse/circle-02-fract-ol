@@ -68,7 +68,6 @@ int	ft_isfloat(const char *str)
 
 void	zoom(t_mlx *mlx, char direction)
 {
-	/*
 	if (direction == '+')
 	{
 		mlx->zoom = mlx->zoom + 50;
@@ -84,26 +83,6 @@ void	zoom(t_mlx *mlx, char direction)
 			move(mlx, 'l');
 		}
 	}
-	*/
-	double zoom_factor = 50.0;
-    double center_x = SIZE / 2.0;
-    double center_y = SIZE / 2.0;
-
-    if (direction == '+')
-    {
-        mlx->offset_x -= (center_x - mlx->offset_x) / (mlx->zoom / zoom_factor);
-        mlx->offset_y -= (center_y - mlx->offset_y) / (mlx->zoom / zoom_factor);
-        mlx->zoom += zoom_factor;
-    }
-    else
-    {
-        if (mlx->zoom > zoom_factor)
-        {
-            mlx->offset_x += (center_x - mlx->offset_x) / (mlx->zoom / zoom_factor);
-            mlx->offset_y += (center_y - mlx->offset_y) / (mlx->zoom / zoom_factor);
-            mlx->zoom -= zoom_factor;
-        }
-    }
 }
 
 void	move(t_mlx *mlx, char direction)
