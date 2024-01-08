@@ -72,11 +72,11 @@ void zoom(t_mlx *mlx, char direction)
 		mlx->zoom = mlx->zoom + 10;
 	else
 		mlx->zoom = mlx->zoom - 10;
-	/*mlx_destroy_image(mlx->mlx, mlx->img);
+	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx->win = mlx_new_window(mlx->mlx, SIZE, SIZE, "Fract-ol");
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
-			&mlx->endian);*/
+			&mlx->endian);
 	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
 }
