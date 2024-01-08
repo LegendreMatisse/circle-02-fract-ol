@@ -27,14 +27,14 @@ void	primary_arg_check(int argc, char **argv)
 	if (argc < 2 || argc > 4 || argc == 3)
 	{
 		ft_printf("Incorrect usage.");
-		exit_w_mess("Try ./fractol <mandelbrot> or <julia>", NULL, 1)
+		exit_w_mess("Try ./fractol <mandelbrot> or <julia>", NULL, 1);
 	}
 	else
 	{
 		if (name_check(argv[1]) == 1)
 		{
 			ft_printf("Incorrect usage.");
-			exit_w_mess("Try ./fractol <mandelbrot> or <julia>", NULL, 1)
+			exit_w_mess("Try ./fractol <mandelbrot> or <julia>", NULL, 1);
 		}
 	}
 }
