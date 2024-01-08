@@ -16,7 +16,7 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 {
 	if (function == 'm')
 	{
-		mlx->zoom = 275;
+		mlx->zoom = 200;
 		mlx->offset_x = -1.21;
 		mlx->offset_y = -1.21;
 	}
