@@ -109,4 +109,5 @@ void	free_mlx(t_mlx *mlx)
 	mlx->win = NULL;
 	mlx->img = NULL;
 	mlx->addr = NULL;
+	mlx = NULL;
 }
