@@ -56,7 +56,7 @@ int	_pick_color(int i, t_mlx *mlx)
 
 int	pick_color(int i, t_mlx *mlx)
 {
-    double	norm_iter;
+	double	norm_iter;
 	int		r;
 	int		g;
 	int		b;
