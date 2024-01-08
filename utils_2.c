@@ -73,11 +73,11 @@ void zoom(t_mlx *mlx, char direction)
 		mlx->zoom = mlx->zoom + 10;
 	else
 		mlx->zoom = mlx->zoom - 10;
-	mlx_destroy_image(mlx->mlx, mlx->img);
+	/*mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
 			&mlx->endian);
-	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
+	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);*/
 	//mlx_loop(mlx->mlx);
 }
 
@@ -91,9 +91,9 @@ void	move(t_mlx *mlx, char direction)
 		mlx->offset_x = mlx->offset_x - 0.25;
 	else if (direction == 'r')
 		mlx->offset_x = mlx->offset_x + 0.25;
-	mlx_destroy_image(mlx->mlx, mlx->img);
+	/*mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
 			&mlx->endian);
-	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
+	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);*/
 }
