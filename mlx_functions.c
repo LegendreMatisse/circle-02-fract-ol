@@ -20,14 +20,15 @@ int	keypress(int keycode, t_mlx *mlx)
 	if (keycode == XK_Escape)
 		ft_exit_wo_mess(mlx);
 	if (keycode == XK_KP_Add)
+	{
 		zoom(mlx, '+');
+		ft_printf("zoom: %d\n", mlx->zoom);
+	}
 	if (keycode == XK_KP_Subtract)
+	{
 		zoom(mlx, '-');
-	mlx_destroy_image(mlx->mlx, mlx->img);
-	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
-	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
-			&mlx->endian);
-	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
+		ft_printf("zoom: %d\n", mlx->zoom);
+	}
 	return (0);
 }
 
