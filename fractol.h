@@ -61,7 +61,7 @@ int		ft_isfloat(const char *str);
 void	zoom(t_mlx *mlx, char direction);
 
 /*MLX specific functions*/
-int		keypress(int keycode, t_mlx *mlx);
+int		key_hook(int keycode, t_mlx *mlx);
 void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
