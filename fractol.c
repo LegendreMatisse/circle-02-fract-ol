@@ -51,6 +51,8 @@ void	print_message()
 	ft_printf("<🡒>	==> move right\n");
 	ft_printf("<mouse wheel up> ==> zoom in\n");
 	ft_printf("<mouse wheel down> ==> zoom out\n");
+	ft_printf("<Q> ==> more detail\n");
+	ft_printf("<A> ==> less detail (*sad campus noises*)\n");
 }
 
 int	main(int argc, char **argv)
