@@ -54,7 +54,7 @@ int	_pick_color(int i, t_mlx *mlx)
 		return (mlx->color * i);
 }
 
-int pick_color(int i, t_mlx *mlx)
+int	pick_color(int i, t_mlx *mlx)
 {
     double	norm_iter;
 	int		r;
@@ -65,5 +65,5 @@ int pick_color(int i, t_mlx *mlx)
 	r = (sin(norm_iter * 2.0 * M_PI + 0.0) * 127.5 + 127.5);
 	g = (sin(norm_iter * 2.0 * M_PI + 2.0 * M_PI / 3.0) * 127.5 + 127.5);
 	b = (sin(norm_iter * 2.0 * M_PI + 4.0 * M_PI / 3.0) * 127.5 + 127.5);
-	return (r << 16) + (g << 8) + b;
+	return ((r << 16) + (g << 8) + b);
 }
