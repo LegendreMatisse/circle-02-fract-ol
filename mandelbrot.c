@@ -31,8 +31,7 @@ void	calc_mandl(t_mlx *mlx)
 {
 	int		i;
 	double	tmp;
-
-	mlx->name = "mandel";
+	
 	i = 0;
 	mlx->zx = 0.0;
 	mlx->zy = 0.0;
