@@ -11,3 +11,11 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void    change_iterations(t_mlx *mlx, char direction)
+{
+    if (direction == 'u')
+        mlx->max_iterations += 10;
+    else
+        mlx->max_iterations -= 10;
+}

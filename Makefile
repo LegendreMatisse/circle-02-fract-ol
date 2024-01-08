@@ -19,7 +19,8 @@ AR			=	ar rcs
 RM			=	rm -rf
 
 SRCS		=	utils_1.c mlx_functions.c drawing_utils.c \
-				fractol.c mandelbrot.c julia.c utils_2.c
+				fractol.c mandelbrot.c julia.c utils_2.c \
+				utils_3.c
 
 OBJ_DIR		=	obj
 OBJS		=	$(SRCS:%.c=$(OBJ_DIR)/%.o)

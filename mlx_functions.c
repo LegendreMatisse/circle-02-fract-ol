@@ -37,6 +37,10 @@ int	keypress(int keycode, t_mlx *mlx)
 		move(mlx, 'l');
 	if (keycode == XK_Right)
 		move(mlx, 'r');
+	if (keycode == XK_q)
+		change_iterations(mlx, 'u');
+	if (keycode == XK_a)
+		change_iterations(mlx, 'd');
 	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
