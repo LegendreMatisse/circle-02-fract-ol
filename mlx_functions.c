@@ -50,8 +50,10 @@ void	init_mlx(t_mlx *mlx)
 			&mlx->line_len, &mlx->endian);
 }
 
-int	mouse(int mousecode, t_mlx *mlx)
+int	mouse(int mousecode, int x, int y, t_mlx *mlx)
 {
+	(void)x;
+	(void)y;
 	if (mousecode == S_UP)
 		zoom(mlx, '+');
 	else if (mousecode == S_DOWN)
