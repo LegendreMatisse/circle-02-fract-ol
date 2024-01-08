@@ -20,7 +20,7 @@ void	init_mandel(t_mlx *mlx)
 	//mlx->zoom = 275;
 	//mlx->offset_x = -2;
 	//mlx->offset_y = -1.30;
-	mlx->max_iterations = 42;
+	mlx->max_iterations = 100;
 	mlx->bpp = 32;
 	mlx->line_len = SIZE * 4;
 	mlx->endian = 0;
