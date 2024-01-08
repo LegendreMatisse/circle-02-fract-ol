@@ -44,13 +44,13 @@ int	main(int argc, char **argv)
 	mlx = NULL;
 	x = 0.0;
 	y = 0.0;
-	ft_primary_arg_check(argc, argv);
+	primary_arg_check(argc, argv);
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
-		return (ft_exit_w_mess("Malloc error", mlx, 1));
+		return (exit_w_mess("Malloc error", mlx, 1));
 	init_fractal(mlx);
 	init_mlx(mlx);
-	ft_secondary_arg_check(argc, argv, &x, &y);
+	secondary_arg_check(argc, argv, &x, &y);
 	mlx->cx = x;
 	mlx->cy = y;
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);

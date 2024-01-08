@@ -14,7 +14,13 @@
 
 /*This function is meant to capture keypresses send 
 to the window when the fract-ol program is running.
-Current capture: - <ESC> to close window*/
+Current capture:	- <ESC> 	to close window
+					- <+>   	to zoom in
+					- <->		to zoom out
+					- <up>		to move up
+					- <down>	to move down
+					- <left>	to move left
+					- <right>	to move right*/
 int	keypress(int keycode, t_mlx *mlx)
 {
 	if (keycode == XK_Escape)

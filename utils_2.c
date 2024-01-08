@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y)
+void	secondary_arg_check(int argc, char **argv, double *x, double *y)
 {
 	if (ft_strncmp(argv[1], "mandelbrot", 11) == 0)
 	{
@@ -29,11 +29,11 @@ void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y)
 		else
 		{
 			if (!ft_isfloat(argv[2]) || !ft_isfloat(argv[3]))
-				ft_exit_w_mess("Try any value between -4 and 4.", NULL, 1);
+				exit_w_mess("Try any value between -4 and 4.", NULL, 1);
 			*x = ft_atof(argv[2]);
 			*y = ft_atof(argv[3]);
 			if (*x < -4 || *x > 4 || *y < -4 || *y > 4)
-				ft_exit_w_mess("Try any value between -4 and 4.", NULL, 1);
+				exit_w_mess("Try any value between -4 and 4.", NULL, 1);
 		}
 	}
 }

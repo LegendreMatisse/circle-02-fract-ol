@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-int	ft_name_check(char *name)
+int	name_check(char *name)
 {
 	if (ft_strncmp(name, "mandelbrot", 11) == 0)
 		return (0);
@@ -22,18 +22,18 @@ int	ft_name_check(char *name)
 		return (1);
 }
 
-void	ft_primary_arg_check(int argc, char **argv)
+void	primary_arg_check(int argc, char **argv)
 {
 	if (argc < 2 || argc > 4 || argc == 3)
-		ft_exit_w_mess("Incorrect usage. Try ./fractol <fractal>", NULL, 1);
+		exit_w_mess("Incorrect usage. Try ./fractol <fractal>", NULL, 1);
 	else
 	{
-		if (ft_name_check(argv[1]) == 1)
-			ft_exit_w_mess("Invalid name. Try <mandelbrot>, <julia>", NULL, 1);
+		if (name_check(argv[1]) == 1)
+			exit_w_mess("Invalid name. Try <mandelbrot>, <julia>", NULL, 1);
 	}
 }
 
-int	ft_exit_w_mess(char *str, t_mlx *mlx, int error)
+int	exit_w_mess(char *str, t_mlx *mlx, int error)
 {
 	ft_printf("%s\n", str);
 	if (mlx != NULL)
@@ -43,7 +43,7 @@ int	ft_exit_w_mess(char *str, t_mlx *mlx, int error)
 	return (error);
 }
 
-int	ft_exit_wo_mess(t_mlx *mlx)
+int	exit_wo_mess(t_mlx *mlx)
 {
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	//Replace with actual exit function with frees and stuff

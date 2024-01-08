@@ -52,9 +52,9 @@ typedef struct s_mlx
 }				t_mlx;
 
 /*Utilities*/
-void	ft_print_contrl(void);
-int		ft_exit_w_mess(char *str, t_mlx *mlx, int error);
-int		ft_exit_wo_mess(t_mlx *mlx);
+void	print_contrl(void);
+int		exit_w_mess(char *str, t_mlx *mlx, int error);
+int		exit_wo_mess(t_mlx *mlx);
 double	ft_atof(const char *str);
 int		ft_isfloat(const char *str);
 void	zoom(t_mlx *mlx, char direction);
@@ -66,8 +66,8 @@ int		mouse(int mousecode, int x, int y, t_mlx *mlx);
 void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
-void	ft_primary_arg_check(int argc, char **argv);
-void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y);
+void	primary_arg_check(int argc, char **argv);
+void	secondary_arg_check(int argc, char **argv, double *x, double *y);
 
 /*Draw utilities*/
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);
