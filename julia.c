@@ -19,10 +19,10 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 	{
 		mlx->zoom = 200;
 		mlx->offset_x = -1.21;
-		printf("offset_x = %f\n", mlx->offset_x);
 		mlx->offset_y = -1.21;
-		printf("offset_y = %f\n", mlx->offset_y);
 	}
+	printf("offset_x = %f\n", mlx->offset_x);
+	printf("offset_y = %f\n", mlx->offset_y);
 	mlx->x = 0;
 	mlx->y = 0;
 	mlx->cx = x;
