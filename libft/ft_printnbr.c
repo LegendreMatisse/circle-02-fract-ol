@@ -23,4 +23,4 @@ int	ft_printnbr(int num)
 	free(c_num);
 	c_num = NULL;
 	return (printedchars);
-}	
+}
