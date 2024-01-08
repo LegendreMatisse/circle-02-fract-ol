@@ -42,17 +42,17 @@ void	print_message()
 	ft_printf("Change Julia by passing extra arguments\n");
 	ft_printf("./fractol julia <-4 ... 4> <-4 ... 4>\n");
 	ft_printf("Commands:\n");
-	ft_printf("<ESC> ==> close window\n");
-	ft_printf("<+> ==> zoom in\n");
-	ft_printf("<-> ==> zoom out\n");
-	ft_printf("<🡑> ==> move up\n");
-	ft_printf("<🡓> ==> move down\n");
-	ft_printf("<🡐> ==> move left\n");
-	ft_printf("<🡒>	==> move right\n");
-	ft_printf("<mouse wheel up> ==> zoom in\n");
-	ft_printf("<mouse wheel down> ==> zoom out\n");
-	ft_printf("<Q> ==> more detail\n");
-	ft_printf("<A> ==> less detail (*sad campus noises*)\n");
+	ft_printf("|ESC| ==> close window\n");
+	ft_printf("|+| ==> zoom in\n");
+	ft_printf("|-| ==> zoom out\n");
+	ft_printf("|^| ==> move up\n");
+    ft_printf("|v| ==> move down\n");
+    ft_printf("|<| ==> move left\n");
+    ft_printf("|>| ==> move right\n");
+	ft_printf("|mouse wheel up| ==> zoom in\n");
+	ft_printf("|mouse wheel down| ==> zoom out\n");
+	ft_printf("|Q| ==> more detail\n");
+	ft_printf("|A| ==> less detail (*sad campus noises*)\n");
 }
 
 int	main(int argc, char **argv)

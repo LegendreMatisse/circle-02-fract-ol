@@ -52,7 +52,6 @@ typedef struct s_mlx
 }				t_mlx;
 
 /*Utilities*/
-void	print_contrl(void);
 int		exit_w_mess(char *str, t_mlx *mlx, int error);
 int		exit_wo_mess(t_mlx *mlx);
 double	ft_atof(const char *str);
