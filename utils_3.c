@@ -6,7 +6,7 @@
 /*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:58:12 by mlegendr          #+#    #+#             */
-/*   Updated: 2024/01/08 22:58:37 by matisse          ###   ########.fr       */
+/*   Updated: 2024/01/09 00:14:52 by matisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	print_message(void)
 	ft_printf("|+| ==> zoom in\n");
 	ft_printf("|-| ==> zoom out\n");
 	ft_printf("|^| ==> move up\n");
-    ft_printf("|v| ==> move down\n");
-    ft_printf("|<| ==> move left\n");
-    ft_printf("|>| ==> move right\n");
+	ft_printf("|v| ==> move down\n");
+	ft_printf("|<| ==> move left\n");
+	ft_printf("|>| ==> move right\n");
 	ft_printf("|mouse wheel up| ==> zoom in\n");
 	ft_printf("|mouse wheel down| ==> zoom out\n");
 	ft_printf("|Q| ==> more detail\n");
