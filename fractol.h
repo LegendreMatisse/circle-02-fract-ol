@@ -62,7 +62,7 @@ void	move(t_mlx *mlx, char direction);
 
 /*MLX specific functions*/
 int		keypress(int keycode, t_mlx *mlx);
-int		mouse(int mousecode, t_mlx *mlx);
+int		mouse(int mousecode, int x, int y, t_mlx *mlx);
 void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
