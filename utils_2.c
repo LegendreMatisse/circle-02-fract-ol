@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void	secondary_arg_check(int argc, char **argv, double *x, double *y)
+void	secondary_arg_check(char **argv, double *x, double *y)
 {
 	if (ft_strncmp(argv[1], "mandelbrot", 11) == 0)
 	{

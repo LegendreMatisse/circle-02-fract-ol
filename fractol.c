@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	x = 0.0;
 	y = 0.0;
 	primary_arg_check(argc, argv);
-	secondary_arg_check(argc, argv, &x, &y);
+	secondary_arg_check(argv, &x, &y);
 	mlx = malloc(sizeof(t_mlx));
 	if (!mlx)
 		return (exit_w_mess("Malloc error", mlx, 1));
