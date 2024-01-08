@@ -23,6 +23,7 @@ int	keypress(int keycode, t_mlx *mlx)
 		zoom(mlx, '+');
 	if (keycode == XK_KP_Subtract)
 		zoom(mlx, '-');
+	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
 	return (0);
 }
 
