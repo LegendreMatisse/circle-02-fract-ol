@@ -52,6 +52,7 @@ int	main(int argc, char **argv)
 	init_mlx(mlx);
 	ft_secondary_arg_check(argc, argv, &x, &y);
 	draw_fractal(mlx, argv[1], x, y);
+	ft_printf("zoom main: %d\n", mlx->zoom);
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L << 17, ft_exit_wo_mess, mlx);
 	mlx_loop(mlx->mlx);
