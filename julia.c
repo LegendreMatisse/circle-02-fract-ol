@@ -40,7 +40,7 @@ void	draw_julia(t_mlx *mlx)
 	{
 		while (mlx->y < SIZE)
 		{
-			calc_julia(ml);
+			calc_julia(mlx);
 			mlx->y++;
 		}
 		mlx->x++;
