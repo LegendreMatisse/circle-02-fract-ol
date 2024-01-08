@@ -28,9 +28,9 @@ void	init_fractal(t_mlx *mlx)
 	mlx->cx = 0;
 	mlx->cy = 0;
 	mlx->color = 0;
-	mlx->offset_x = -1.21;
-	mlx->offset_y = -1.21;
-	mlx->zoom = 275;
+	mlx->offset_x = 0;
+	mlx->offset_y = 0;
+	mlx->zoom = 0;
 	mlx->name = NULL;
 	mlx->max_iterations = 0;
 }
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	mlx->cy = y;
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L << 17, ft_exit_wo_mess, mlx);
-	draw_fractal(mlx, argv[1]);
+	draw_fractal(mlx, argv[1], 'm');
 	mlx_loop(mlx->mlx);
 	return (0);
 }

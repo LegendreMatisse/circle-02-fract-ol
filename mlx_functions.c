@@ -35,7 +35,7 @@ int	keypress(int keycode, t_mlx *mlx)
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
 			&mlx->endian);
-	draw_fractal(mlx, mlx->name);
+	draw_fractal(mlx, mlx->name, 'k');
 	return (0);
 }
 
