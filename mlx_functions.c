@@ -23,7 +23,11 @@ int	keypress(int keycode, t_mlx *mlx)
 		zoom(mlx, '+');
 	if (keycode == XK_KP_Subtract)
 		zoom(mlx, '-');
-	draw_fractal(mlx, mlx->name, mlx->x, mlx->y);
+	mlx_destroy_image(mlx->mlx, mlx->img);
+	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
+			&mlx->endian);
+	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
 	return (0);
 }
 
