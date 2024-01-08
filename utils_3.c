@@ -15,7 +15,7 @@
 void    change_iterations(t_mlx *mlx, char direction)
 {
     if (direction == 'u')
-        mlx->max_iterations += 10;
+        mlx->max_iterations += 5;
     else
-        mlx->max_iterations -= 10;
+        mlx->max_iterations -= 5;
 }
