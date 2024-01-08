@@ -25,6 +25,12 @@ int	keypress(int keycode, t_mlx *mlx)
 		zoom(mlx, '-');
 	if (keycode == XK_Up)
 		move(mlx, 'u');
+	if (keycode == XK_Down)
+		move(mlx, 'd');
+	if (keycode == XK_Left)
+		move(mlx, 'l');
+	if (keycode == XK_Right)
+		move(mlx, 'r');
 	return (0);
 }
 
