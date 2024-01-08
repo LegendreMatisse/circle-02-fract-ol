@@ -67,7 +67,6 @@ void    change_iterations(t_mlx *mlx, char direction);
 int		keypress(int keycode, t_mlx *mlx);
 int		mouse(int mousecode, int x, int y, t_mlx *mlx);
 void	init_mlx(t_mlx *mlx);
-int		redraw(t_mlx *mlx);
 
 /*Argument checks*/
 void	primary_arg_check(int argc, char **argv);

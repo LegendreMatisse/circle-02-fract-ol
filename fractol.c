@@ -78,7 +78,6 @@ int	main(int argc, char **argv)
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L << 17, exit_wo_mess, mlx);
 	mlx_mouse_hook(mlx->win, mouse, mlx);
-	mlx_loop_hook(mlx->win, redraw, mlx);
 	mlx_loop(mlx->mlx);
 	return (0);
 }
