@@ -24,7 +24,10 @@ int	keypress(int keycode, t_mlx *mlx)
 	if (keycode == XK_KP_Subtract)
 		zoom(mlx, '-');
 	if (keycode == XK_Up)
+	{
+		ft_printf("up\n");
 		move(mlx, 'u');
+	}
 	if (keycode == XK_Down)
 		move(mlx, 'd');
 	if (keycode == XK_Left)
