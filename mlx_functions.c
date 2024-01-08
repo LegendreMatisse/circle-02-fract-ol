@@ -54,7 +54,7 @@ int	mouse(int mousecode, t_mlx *mlx)
 {
 	if (mousecode == S_UP)
 		zoom(mlx, '+');
-	if (mousecode == S_DOWN)
+	else if (mousecode == S_DOWN)
 		zoom(mlx, '-');
 	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
