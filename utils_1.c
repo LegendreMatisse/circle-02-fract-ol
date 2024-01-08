@@ -42,14 +42,16 @@ void	primary_arg_check(int argc, char **argv)
 int	exit_w_mess(char *str, t_mlx *mlx, int error)
 {
 	ft_printf("%s\n", str);
-	free_mlx(mlx);
+	if (mlx)
+		free_mlx(mlx);
 	exit(error);
 	return (error);
 }
 
 int	exit_wo_mess(t_mlx *mlx)
 {
-	free_mlx(mlx);
+	if (mlx)
+		free_mlx(mlx);
 	exit(0);
 	return (0);
 }
