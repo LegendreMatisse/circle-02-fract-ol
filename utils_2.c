@@ -88,3 +88,21 @@ void	move(t_mlx *mlx, char direction)
 	else if (direction == 'r')
 		mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
 }
+
+void	free_mlx(t_mlx *mlx)
+{
+	if (mlx->img)
+		mlx_destroy_image(mlx->mlx, mlx->img);
+	if (mlx->win)
+		mlx_destroy_window(mlx->mlx, mlx->win);
+	if (mlx->mlx)
+	{
+		mlx_destroy_display(mlx->mlx);
+		mlx_loop_end(mlx->mlx);
+		free(mlx->mlx);
+	}
+	mlx->mlx = NULL;
+	mlx->win = NULL;
+	mlx->img = NULL;
+	mlx->addr = NULL;
+}

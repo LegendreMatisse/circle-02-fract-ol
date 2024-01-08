@@ -36,17 +36,14 @@ void	primary_arg_check(int argc, char **argv)
 int	exit_w_mess(char *str, t_mlx *mlx, int error)
 {
 	ft_printf("%s\n", str);
-	if (mlx != NULL)
-		mlx_destroy_window(mlx->mlx, mlx->win);
-	//Replace with actual exit function with frees and stuff
+	free_mlx(mlx);
 	exit(error);
 	return (error);
 }
 
 int	exit_wo_mess(t_mlx *mlx)
 {
-	mlx_destroy_window(mlx->mlx, mlx->win);
-	//Replace with actual exit function with frees and stuff
+	free_mlx(mlx);
 	exit(0);
 	return (0);
 }
