@@ -21,11 +21,13 @@ int	keypress(int keycode, t_mlx *mlx)
 		ft_exit_wo_mess(mlx);
 	if (keycode == XK_KP_Add)
 	{
+		ft_printf("zoom: %d\n", mlx->zoom);
 		zoom(mlx, '+');
 		ft_printf("zoom: %d\n", mlx->zoom);
 	}
 	if (keycode == XK_KP_Subtract)
 	{
+		ft_printf("zoom: %d\n", mlx->zoom);
 		zoom(mlx, '-');
 		ft_printf("zoom: %d\n", mlx->zoom);
 	}
