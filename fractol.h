@@ -25,6 +25,8 @@
 # include <fcntl.h>
 
 # define SIZE 700
+# define S_UP 4
+# define S_DOWN 5
 
 typedef struct s_mlx
 {

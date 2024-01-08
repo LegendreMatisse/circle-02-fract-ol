@@ -49,3 +49,17 @@ void	init_mlx(t_mlx *mlx)
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp,
 			&mlx->line_len, &mlx->endian);
 }
+
+int	mouse(int mousecode, t_mlx *mlx)
+{
+	if (mousecode == S_UP)
+		zoom(mlx, '+');
+	if (mousecode == S_DOWN)
+		zoom(mlx, '-');
+	mlx_destroy_image(mlx->mlx, mlx->img);
+	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
+			&mlx->endian);
+	draw_fractal(mlx, mlx->name, 'k');
+	return (0);
+}
