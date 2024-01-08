@@ -84,13 +84,13 @@ void zoom(t_mlx *mlx, char direction)
 void	move(t_mlx *mlx, char direction)
 {
 	if (direction == 'u')
-		mlx->offset_y = mlx->offset_y - 50 / mlx->zoom;
+		mlx->offset_y = mlx->offset_y - 500 / mlx->zoom;
 	else if (direction == 'd')
-		mlx->offset_y = mlx->offset_y + 50 / mlx->zoom;
+		mlx->offset_y = mlx->offset_y + 500 / mlx->zoom;
 	else if (direction == 'l')
-		mlx->offset_x = mlx->offset_x - 50 / mlx->zoom;
+		mlx->offset_x = mlx->offset_x - 500 / mlx->zoom;
 	else if (direction == 'r')
-		mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
+		mlx->offset_x = mlx->offset_x + 500 / mlx->zoom;
 	/*mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
