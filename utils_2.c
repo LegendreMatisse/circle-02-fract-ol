@@ -71,7 +71,10 @@ void	zoom(t_mlx *mlx, char direction)
 	if (direction == '+')
 		mlx->zoom = mlx->zoom + 50;
 	else
+	{
+		if (mlx->zoom > 50)
 		mlx->zoom = mlx->zoom - 50;
+	}
 }
 
 void	move(t_mlx *mlx, char direction)
