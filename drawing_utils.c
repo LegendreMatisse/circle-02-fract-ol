@@ -44,14 +44,14 @@ int	draw_fractal(t_mlx *mlx, char *choice, char function, char color)
 
 /*A simple function that picks a color based on 
 * wether the number is divisible by 7 or 89.*/
-int	pick_color(int i, t_mlx *mlx)
+int	pick_color(int i, t_mlx *mlx, char color)
 {
 	double	norm_iter;
 	int 	r;
 	int 	g;
 	int 	b;
 
-	if (operation == 'f')
+	if (color == 'f')
 	{
 		norm_iter = (double)i / (double)mlx->max_iterations;
 		r = (sin(norm_iter * 2.0 * M_PI + 0.0) * 127.5 + 127.5);
