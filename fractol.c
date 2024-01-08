@@ -44,7 +44,7 @@ void	print_message()
 	ft_printf("Commands:\n");
 	ft_printf("<ESC> ==> close window\n");
 	ft_printf("<+> ==> zoom in\n");
-	ft_printf("<->	==> zoom out\n");
+	ft_printf("<-> ==> zoom out\n");
 	ft_printf("<up> ==> move up\n");
 	ft_printf("<down> ==> move down\n");
 	ft_printf("<left> ==> move left\n");
