@@ -17,11 +17,11 @@ to the window when the fract-ol program is running.
 Current capture: - <ESC> to close window*/
 int	keypress(int keycode, t_mlx *mlx)
 {
-	if (keycode == XK_Escape)
+	if (keycode == ESC)
 		ft_exit_wo_mess(mlx);
-	if (keycode == XK_KP_Add)
+	if (keycode == UP)
 		zoom(mlx, '+');
-	if (keycode == XK_KP_Subtract)
+	if (keycode == DOWN)
 		zoom(mlx, '-');
 	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
 	return (0);
