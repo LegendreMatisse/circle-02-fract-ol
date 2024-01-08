@@ -84,7 +84,9 @@ void zoom(t_mlx *mlx, char direction)
 void	move(t_mlx *mlx, char direction)
 {
 	if (direction == 'u')
+	{
 		mlx->offset_y = mlx->offset_y - 500 / mlx->zoom;
+	}
 	else if (direction == 'd')
 		mlx->offset_y = mlx->offset_y + 500 / mlx->zoom;
 	else if (direction == 'l')

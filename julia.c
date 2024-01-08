@@ -21,9 +21,9 @@ void	init_julia(t_mlx *mlx, double x, double y)
 	mlx->color = 0x0bd2024;
 	//mlx->zoom = 275;
 	//mlx->offset_x = -1.21;
-	mlx->offset_x = -1.21 - 250 / mlx->zoom;
+	//mlx->offset_x = -1.21 - 250 / mlx->zoom;
 	//mlx->offset_y = -1.21;
-	mlx->offset_y = -1.21 - 250 / mlx->zoom;
+	//mlx->offset_y = -1.21 - 250 / mlx->zoom;
 	mlx->max_iterations = 100;
 	mlx->bpp = 32;
 	mlx->line_len = SIZE * 4;
