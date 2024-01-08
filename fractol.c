@@ -51,9 +51,11 @@ int	main(int argc, char **argv)
 	init_fractal(mlx);
 	init_mlx(mlx);
 	ft_secondary_arg_check(argc, argv, &x, &y);
+	mlx->cx = x;
+	mlx->cy = y;
 	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
 	mlx_hook(mlx->win, 17, 1L << 17, ft_exit_wo_mess, mlx);
-	draw_fractal(mlx, argv[1], x, y);
+	draw_fractal(mlx, argv[1]);
 	mlx_loop(mlx->mlx);
 	return (0);
 }

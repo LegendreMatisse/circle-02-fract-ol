@@ -15,7 +15,7 @@
 /*This function is meant to capture keypresses send 
 to the window when the fract-ol program is running.
 Current capture: - <ESC> to close window*/
-int	keypress(int keycode, t_mlx *mlx)
+int	keypress(int keycode, t_mlx *mlx, char function)
 {
 	if (keycode == XK_Escape)
 		ft_exit_wo_mess(mlx);
@@ -35,7 +35,7 @@ int	keypress(int keycode, t_mlx *mlx)
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
 			&mlx->endian);
-	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
+	draw_fractal(mlx, mlx->name);
 	return (0);
 }
 

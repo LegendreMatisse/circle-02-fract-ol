@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
 void	ft_secondary_arg_check(int argc, char **argv, double *x, double *y)
 {
@@ -70,9 +69,9 @@ int	ft_isfloat(const char *str)
 void zoom(t_mlx *mlx, char direction)
 {
 	if (direction == '+')
-		mlx->zoom = mlx->zoom + 10;
+		mlx->zoom = mlx->zoom + 50;
 	else
-		mlx->zoom = mlx->zoom - 10;
+		mlx->zoom = mlx->zoom - 50;
 }
 
 void	move(t_mlx *mlx, char direction)
