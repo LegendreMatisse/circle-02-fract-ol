@@ -17,7 +17,7 @@ void	init_mandel(t_mlx *mlx)
 	mlx->x = 0;
 	mlx->y = 0;
 	mlx->color = 0x0bd2024;
-	mlx->zoom = 275;
+	//mlx->zoom = 275;
 	mlx->offset_x = -2;
 	mlx->offset_y = -1.30;
 	mlx->max_iterations = 100;
@@ -31,7 +31,7 @@ void	calc_mandl(t_mlx *mlx)
 {
 	int		i;
 	double	tmp;
-	
+
 	i = 0;
 	mlx->zx = 0.0;
 	mlx->zy = 0.0;
