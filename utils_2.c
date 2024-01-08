@@ -103,6 +103,9 @@ void	free_mlx(t_mlx *mlx)
 		mlx_loop_end(mlx->mlx);
 		free(mlx->mlx);
 	}
+	if (mlx)
+		free(mlx);
+	mlx = NULL;
 	mlx->mlx = NULL;
 	mlx->win = NULL;
 	mlx->img = NULL;
