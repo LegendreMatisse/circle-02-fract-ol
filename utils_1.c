@@ -25,7 +25,7 @@ int	name_check(char *name)
 void	primary_arg_check(int argc, char **argv)
 {
 	if (argc < 2 || argc > 4 || argc == 3)
-		exit_w_mess("Incorrect usage. Try ./fractol <fractal>", NULL, 1);
+		exit_w_mess("Invalid name. Try ./fractol <fractal>", NULL, 1);
 	else
 	{
 		if (name_check(argv[1]) == 1)

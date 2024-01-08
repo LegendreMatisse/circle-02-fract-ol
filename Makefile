@@ -59,7 +59,7 @@ $(NAME):	$(LIBFT) $(MLX) $(OBJ_DIR) $(OBJS)
 			@cp $(MLX) ./ >/dev/null 2>&1
 			@$(AR) $(LIBRARY) $(OBJS) >/dev/null 2>&1
 			@echo "$(YELLOW)Linking $(NAME) executable...$(RESET)"
-			@$(CC) -o $(NAME) $(LIBRARY) -L$(LIBFT_PATH) -lft -L$(MLX_PATH) -lmlx -lXext -lX11 -lm -lz
+			@$(CC) -o $(NAME) $(LIBRARY) -L$(LIBFT_PATH) -lft -L$(MLX_PATH) -lmlx -lXext -lX11 -lm
 			@echo "$(GREEN)$(NAME) is ready.$(RESET)"
 
 $(LIBFT):
