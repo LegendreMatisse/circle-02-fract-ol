@@ -72,11 +72,13 @@ void zoom(t_mlx *mlx, char direction)
 	if (direction == '+')
 	{
 		printf("zoom: %f\n", mlx->zoom);
+		printf("name: %s\n", mlx->name);
 		mlx->zoom = mlx->zoom + 10;
 	}
 	else
 	{
 		printf("zoom: %f\n", mlx->zoom);
+		printf("name: %s\n", mlx->name);
 		mlx->zoom = mlx->zoom - 10;
 	}
 	mlx_destroy_image(mlx->mlx, mlx->img);
