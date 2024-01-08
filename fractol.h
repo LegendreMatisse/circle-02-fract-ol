@@ -61,7 +61,7 @@ void	move(t_mlx *mlx, char direction);
 void	free_mlx(t_mlx *mlx);
 void	change_iterations(t_mlx *mlx, char direction);
 void	print_message(void);
-void	redraw(t_mlx *mlx, char color);
+void	redraw(t_mlx *mlx);
 
 /*MLX specific functions*/
 int		keypress(int keycode, t_mlx *mlx);
