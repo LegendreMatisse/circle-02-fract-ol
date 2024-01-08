@@ -38,8 +38,8 @@ void	init_fractal(t_mlx *mlx)
 int	main(int argc, char **argv)
 {
 	t_mlx	*mlx;
-	double		x;
-	double		y;
+	double	x;
+	double	y;
 
 	mlx = NULL;
 	x = 0.0;

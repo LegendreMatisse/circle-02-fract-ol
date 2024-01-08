@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matisse <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mlegendr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 23:24:48 by matisse           #+#    #+#             */
-/*   Updated: 2024/01/07 23:27:20 by matisse          ###   ########.fr       */
+/*   Created: 2024/01/07 23:24:48 by mlegendr          #+#    #+#             */
+/*   Updated: 2024/01/07 23:27:20 by mlegendr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_isfloat(const char *str)
 	return (has_digit);
 }
 
-void zoom(t_mlx *mlx, char direction)
+void	zoom(t_mlx *mlx, char direction)
 {
 	if (direction == '+')
 		mlx->zoom = mlx->zoom + 50;
