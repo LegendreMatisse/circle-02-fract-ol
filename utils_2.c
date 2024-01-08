@@ -79,4 +79,7 @@ void zoom(t_mlx *mlx, char direction)
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
 			&mlx->endian);
 	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
+	mlx_hook(mlx->win, 2, 1L << 0, keypress, mlx);
+	mlx_hook(mlx->win, 17, 1L << 17, ft_exit_wo_mess, mlx);
+	mlx_loop(mlx->mlx);
 }
