@@ -69,11 +69,19 @@ int	ft_isfloat(const char *str)
 void	zoom(t_mlx *mlx, char direction)
 {
 	if (direction == '+')
+	{
 		mlx->zoom = mlx->zoom + 50;
+		move(mlx, 'd');
+		move(mlx, 'r');
+	}
 	else
 	{
 		if (mlx->zoom > 50)
+		{
 			mlx->zoom = mlx->zoom - 50;
+			move(mlx, 'u');
+			move(mlx, 'l');
+		}
 	}
 }
 
