@@ -35,7 +35,7 @@ void	init_fractal(t_mlx *mlx)
 	mlx->max_iterations = 0;
 }
 
-void	printf_message()
+void	print_message()
 {
 	ft_printf("Usage:\n");
 	ft_printf("./fractol <mandelbrot> or <julia>\n");
