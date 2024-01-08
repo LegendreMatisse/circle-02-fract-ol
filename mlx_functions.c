@@ -68,10 +68,6 @@ int	mouse(int mousecode, int x, int y, t_mlx *mlx)
 		zoom(mlx, '+');
 	else if (mousecode == S_DOWN)
 		zoom(mlx, '-');
-	mlx_destroy_image(mlx->mlx, mlx->img);
-	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
-	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
-			&mlx->endian);
-	draw_fractal(mlx, mlx->name, 'k');
+	redraw(mlx, 's');
 	return (0);
 }
