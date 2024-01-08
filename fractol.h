@@ -60,7 +60,8 @@ void	zoom(t_mlx *mlx, char direction);
 void	move(t_mlx *mlx, char direction);
 void	free_mlx(t_mlx *mlx);
 void	print_message();
-void    change_iterations(t_mlx *mlx, char direction);
+void	change_iterations(t_mlx *mlx, char direction);
+void	print_message(void);
 
 /*MLX specific functions*/
 int		keypress(int keycode, t_mlx *mlx);
