@@ -70,7 +70,7 @@ void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
 void	primary_arg_check(int argc, char **argv);
-void	secondary_arg_check(char **argv, double *x, double *y);
+void	secondary_arg_check(int argc, char **argv, double *x, double *y);
 
 /*Draw utilities*/
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);
