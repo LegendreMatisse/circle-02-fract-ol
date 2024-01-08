@@ -80,3 +80,20 @@ void zoom(t_mlx *mlx, char direction)
 	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
 	//mlx_loop(mlx->mlx);
 }
+
+void	move(t_mlx *mlx, char direction)
+{
+	if (direction == 'u')
+		mlx->offset_y = mlx->offset_y - 0.25;
+	else if (direction == 'd')
+		mlx->offset_y = mlx->offset_y + 0.25;
+	else if (direction == 'l')
+		mlx->offset_x = mlx->offset_x - 0.25;
+	else if (direction == 'r')
+		mlx->offset_x = mlx->offset_x + 0.25;
+	mlx_destroy_image(mlx->mlx, mlx->img);
+	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
+			&mlx->endian);
+	draw_fractal(mlx, mlx->name, mlx->cx, mlx->cy);
+}

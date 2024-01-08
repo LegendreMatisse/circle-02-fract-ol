@@ -23,6 +23,8 @@ int	keypress(int keycode, t_mlx *mlx)
 		zoom(mlx, '+');
 	if (keycode == XK_KP_Subtract)
 		zoom(mlx, '-');
+	if (keycode == XK_Up)
+		move(mlx, 'u');
 	return (0);
 }
 
