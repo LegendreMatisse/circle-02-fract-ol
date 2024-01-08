@@ -25,9 +25,6 @@
 # include <fcntl.h>
 
 # define SIZE 700
-# define ESC 53
-# define UP 126
-# define DOWN 125
 
 typedef struct s_mlx
 {
@@ -61,7 +58,7 @@ int		ft_isfloat(const char *str);
 void	zoom(t_mlx *mlx, char direction);
 
 /*MLX specific functions*/
-int		key_hook(int keycode, t_mlx *mlx);
+int		keypress(int keycode, t_mlx *mlx);
 void	init_mlx(t_mlx *mlx);
 
 /*Argument checks*/
