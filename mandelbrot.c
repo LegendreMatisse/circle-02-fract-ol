@@ -30,7 +30,7 @@ void	init_mandel(t_mlx *mlx, char function)
 	mlx->name = "mandelbrot";
 }
 
-void	calc_mandl(t_mlx *mlx)
+void	calc_mandl(t_mlx *mlx, char color)
 {
 	int		i;
 	double	tmp;
@@ -51,10 +51,10 @@ void	calc_mandl(t_mlx *mlx)
 	if (i == mlx->max_iterations)
 		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
 	else
-		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
+		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx, color));
 }
 
-void	draw_mandl(t_mlx *mlx)
+void	draw_mandl(t_mlx *mlx, char color)
 {
 	mlx->x = 0;
 	mlx->y = 0;
@@ -62,7 +62,7 @@ void	draw_mandl(t_mlx *mlx)
 	{
 		while (mlx->y < SIZE)
 		{
-			calc_mandl(mlx);
+			calc_mandl(mlx, color);
 			mlx->y++;
 		}
 		mlx->x++;

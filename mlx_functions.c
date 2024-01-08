@@ -41,11 +41,11 @@ int	keypress(int keycode, t_mlx *mlx)
 		change_iterations(mlx, 'u');
 	if (keycode == XK_a)
 		change_iterations(mlx, 'd');
-	mlx_destroy_image(mlx->mlx, mlx->img);
-	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
-	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
-			&mlx->endian);
-	draw_fractal(mlx, mlx->name, 'k');
+	if (keycode == XK_c)
+		redraw(mlx, 'f');
+	if (keycode == XK_s)
+		redraw(mlx, 's');
+	redraw(mlx, 's');
 	return (0);
 }
 

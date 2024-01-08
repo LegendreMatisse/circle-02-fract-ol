@@ -26,17 +26,17 @@ void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color)
 }
 
 /*This function is simple, it just runs the correct function based on choice.*/
-int	draw_fractal(t_mlx *mlx, char *choice, char function)
+int	draw_fractal(t_mlx *mlx, char *choice, char function, char color)
 {
 	if (ft_strncmp(choice, "mandelbrot", 11) == 0)
 	{
 		init_mandel(mlx, function);
-		draw_mandl(mlx);
+		draw_mandl(mlx, color);
 	}
 	else if (ft_strncmp(choice, "julia", 6) == 0)
 	{
 		init_julia(mlx, mlx->cx, mlx->cy, function);
-		draw_julia(mlx);
+		draw_julia(mlx, color);
 	}
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 	return (0);
@@ -46,17 +46,26 @@ int	draw_fractal(t_mlx *mlx, char *choice, char function)
 * wether the number is divisible by 7 or 89.*/
 int	pick_color(int i, t_mlx *mlx)
 {
-	/*if (i % 7 == 0)
-		return (0x0ffff00);
-	else if (i % 89 == 0)
-		return (0x0004488);
+	double	norm_iter;
+	int 	r;
+	int 	g;
+	int 	b;
+
+	if (operation == 'f')
+	{
+		norm_iter = (double)i / (double)mlx->max_iterations;
+		r = (sin(norm_iter * 2.0 * M_PI + 0.0) * 127.5 + 127.5);
+		g = (sin(norm_iter * 2.0 * M_PI + 2.0 * M_PI / 3.0) * 127.5 + 127.5);
+		b = (sin(norm_iter * 2.0 * M_PI + 4.0 * M_PI / 3.0) * 127.5 + 127.5);
+		return (r << 16) + (g << 8) + b;
+	}
 	else
-		return (mlx->color * i);*/
-	double normalized_iteration = (double)i / (double)mlx->max_iterations;
-
-    int r = (sin(normalized_iteration * 2.0 * M_PI + 0.0) * 127.5 + 127.5);
-    int g = (sin(normalized_iteration * 2.0 * M_PI + 2.0 * M_PI / 3.0) * 127.5 + 127.5);
-    int b = (sin(normalized_iteration * 2.0 * M_PI + 4.0 * M_PI / 3.0) * 127.5 + 127.5);
-
-    return (r << 16) + (g << 8) + b;
+	{
+		if (i % 7 == 0)
+			return (0x000000);
+		else if (i % 89 == 0)
+			return (0x000000);
+		else
+			return (0x0bd2024);
+	}
 }
