@@ -30,7 +30,7 @@ void	init_fractal(t_mlx *mlx)
 	mlx->color = 0;
 	mlx->offset_x = 0;
 	mlx->offset_y = 0;
-	mlx->zoom = 0;
+	mlx->zoom = 275;
 	mlx->name = NULL;
 	mlx->max_iterations = 0;
 }

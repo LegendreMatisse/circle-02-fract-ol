@@ -70,17 +70,9 @@ int	ft_isfloat(const char *str)
 void zoom(t_mlx *mlx, char direction)
 {
 	if (direction == '+')
-	{
-		printf("zoom: %f\n", mlx->zoom);
-		printf("name: %s\n", mlx->name);
 		mlx->zoom = mlx->zoom + 10;
-	}
 	else
-	{
-		printf("zoom: %f\n", mlx->zoom);
-		printf("name: %s\n", mlx->name);
 		mlx->zoom = mlx->zoom - 10;
-	}
 	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, SIZE, SIZE);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->line_len,
