@@ -44,7 +44,7 @@ int	draw_fractal(t_mlx *mlx, char *choice, char function)
 
 /*A simple function that picks a color based on 
 * wether the number is divisible by 7 or 89.*/
-int	p_c_mandl(int i, t_mlx *mlx)
+int	_pick_color(int i, t_mlx *mlx)
 {
 	if (i % 7 == 0)
 		return (0x0ffff00);
@@ -54,7 +54,7 @@ int	p_c_mandl(int i, t_mlx *mlx)
 		return (mlx->color * i);
 }
 
-int	p_c_julia(int i, t_mlx *mlx)
+int	pick_color(int i, t_mlx *mlx)
 {
 	double	norm_iter;
 	int		r;
