@@ -86,6 +86,6 @@ void	calc_mandl(t_mlx *mlx);
 /*Julia*/
 void	init_julia(t_mlx *mlx, double x, double y, char function);
 void	draw_julia(t_mlx *mlx);
-void	calc_julia(t_mlx *mlx);
+void	calc_julia(t_mlx *mlx, double x, double y);
 
 #endif

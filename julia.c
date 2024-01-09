@@ -72,14 +72,16 @@ void	draw_julia(t_mlx *mlx)
 	}*/
 }
 
-void	calc_julia(t_mlx *mlx)
+void	calc_julia(t_mlx *mlx, double x, double y)
 {
 	int		i;
 	double	tmp;
 
 	mlx->name = "julia";
-	mlx->zx = mlx->x / mlx->zoom + mlx->offset_x;
-	mlx->zy = mlx->y / mlx->zoom + mlx->offset_y;
+	//mlx->zx = mlx->x / mlx->zoom + mlx->offset_x;
+	//mlx->zy = mlx->y / mlx->zoom + mlx->offset_y;
+	mlx->zx = x;
+	mlx->zy = y;
 	i = 0;
 	while (++i < mlx->max_iterations)
 	{
