@@ -30,7 +30,7 @@ void	init_mandel(t_mlx *mlx, char function)
 	mlx->name = "mandelbrot";
 }
 
-void	draw_mandelbrot(t_mlx *mlx)
+void	draw_mandl(t_mlx *mlx)
 {
 	int	start_x;
 	int	start_y;
