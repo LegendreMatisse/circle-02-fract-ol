@@ -56,8 +56,8 @@ void	calc_mandl(t_mlx *mlx)
 
 void	draw_mandl(t_mlx *mlx)
 {
-	//mlx->x = 0;
-	//mlx->y = 0;
+	mlx->x = 0;
+	mlx->y = 0;
 	while (mlx->x < SIZE)
 	{
 		while (mlx->y < SIZE)
