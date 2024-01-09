@@ -60,8 +60,6 @@ void	draw_julia(t_mlx *mlx)
 	}
 }
 
-//mlx->zx = mlx->x / mlx->zoom + mlx->offset_x;
-//mlx->zy = mlx->y / mlx->zoom + mlx->offset_y;
 void	calc_julia(t_mlx *mlx, double x, double y)
 {
 	int		i;
@@ -84,18 +82,3 @@ void	calc_julia(t_mlx *mlx, double x, double y)
 	else
 		put_color_to_pixel(mlx, mlx->x, mlx->y, p_c_julia(i, mlx));
 }
-
-/*old draw_julia
-	mlx->x = 0;
-	mlx->y = 0;
-	while (mlx->x < SIZE)
-	{
-		while (mlx->y < SIZE)
-		{
-			calc_julia(mlx);
-			mlx->y++;
-		}
-		mlx->x++;
-		mlx->y = 0;
-	}
-*/
