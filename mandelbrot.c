@@ -51,14 +51,14 @@ void	draw_mandelbrot(t_mlx *mlx)
 			mlx->cy = mlx->y / mlx->zoom + mlx->offset_y;
 			if (mlx->cx >= -2.0 && mlx->cx <= 2.0
 				&& mlx->cy >= -2.0 && mlx->cy <= 2.0)
-				calc_mandel(mlx, mlx->cx, mlx->cy);
+				calc_mandl(mlx, mlx->cx, mlx->cy);
 			mlx->y++;
 		}
 		mlx->x++;
 	}
 }
 
-void	calc_mandel(t_mlx *mlx, double x, double y)
+void	calc_mandl(t_mlx *mlx, double x, double y)
 {
 	int		i;
     double	tmp;
