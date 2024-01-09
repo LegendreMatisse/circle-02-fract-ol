@@ -21,7 +21,7 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 		mlx->zoom = 200;
 		mlx->offset_x = -1.71;
 		mlx->offset_y = -1.71;
-		mlx->max_iterations = 100;
+		mlx->max_iterations = 50;
 	}
 	mlx->cx = x;
 	mlx->cy = y;

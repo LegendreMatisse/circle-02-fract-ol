@@ -21,7 +21,7 @@ void	init_mandel(t_mlx *mlx, char function)
 		mlx->zoom = 275;
 		mlx->offset_x = -2;
 		mlx->offset_y = -1.30;
-		mlx->max_iterations = 100;
+		mlx->max_iterations = 50;
 	}
 	mlx->color = 0x0bd2024;
 	mlx->bpp = 32;
