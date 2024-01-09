@@ -30,7 +30,58 @@ void	init_mandel(t_mlx *mlx, char function)
 	mlx->name = "mandelbrot";
 }
 
-void	calc_mandl(t_mlx *mlx)
+void	draw_mandelbrot(t_mlx *mlx)
+{
+	int	start_x;
+	int	start_y;
+	int	end_x;
+	int	end_y;
+
+	start_x = 0;
+	start_y = 0;
+	end_x = SIZE;
+	end_y = SIZE;
+	mlx->x = start_x;
+	while (mlx->x < end_x)
+	{
+		mlx->y = start_y;
+		while (mlx->y < end_y)
+		{
+			mlx->cx = mlx->x / mlx->zoom + mlx->offset_x;
+			mlx->cy = mlx->y / mlx->zoom + mlx->offset_y;
+			if (mlx->cx >= -2.0 && mlx->cx <= 2.0
+				&& mlx->cy >= -2.0 && mlx->cy <= 2.0)
+				calc_mandel(mlx, mlx->cx, mlx->cy);
+			mlx->y++;
+		}
+		mlx->x++;
+	}
+}
+
+void	calc_mandel(t_mlx *mlx, double x, double y)
+{
+	int		i;
+    double	tmp;
+
+	mlx->name = "mandelbrot";
+	mlx->zx = 0;
+	mlx->zy = 0;
+	i = 0;
+	while (++i < mlx->max_iterations)
+	{
+		tmp = mlx->zx;
+		mlx->zx = mlx->zx * mlx->zx - mlx->zy * mlx->zy + x;
+		mlx->zy = 2 * mlx->zy * tmp + y;
+		if (mlx->zx * mlx->zx + mlx->zy * mlx->zy > __DBL_MAX__)
+			break ;
+	}
+	if (i == mlx->max_iterations)
+		put_color_to_pixel(mlx, mlx->x, mlx->y, 0x000000);
+	else
+		put_color_to_pixel(mlx, mlx->x, mlx->y, pick_color(i, mlx));
+}
+
+/*void	calc_mandl(t_mlx *mlx)
 {
 	int		i;
 	double	tmp;
@@ -68,4 +119,4 @@ void	draw_mandl(t_mlx *mlx)
 		mlx->x++;
 		mlx->y = 0;
 	}
-}
+}*/

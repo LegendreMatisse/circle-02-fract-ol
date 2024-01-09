@@ -81,7 +81,7 @@ int		p_c_julia(int i, t_mlx *mlx);
 /*Mandelbrot*/
 void	init_mandel(t_mlx *mlx, char function);
 void	draw_mandl(t_mlx *mlx);
-void	calc_mandl(t_mlx *mlx);
+void	calc_mandl(t_mlx *mlx, double x, double y);
 
 /*Julia*/
 void	init_julia(t_mlx *mlx, double x, double y, char function);
