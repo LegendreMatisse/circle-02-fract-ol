@@ -69,7 +69,7 @@ void	zoom(t_mlx *mlx, char direction)
 	{
 		mlx->zoom = mlx->zoom + 50;
 		mlx->offset_x = mlx->offset_x - 50 / mlx->zoom;
-		mlx->offset_y = mlx->offset_y - 25 / mlx->zoom;
+		mlx->offset_y = mlx->offset_y - 50 / mlx->zoom;
 	}
 	else
 	{
@@ -77,7 +77,7 @@ void	zoom(t_mlx *mlx, char direction)
 		{
 			mlx->zoom = mlx->zoom - 50;
 			mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
-			mlx->offset_y = mlx->offset_y + 25 / mlx->zoom;
+			mlx->offset_y = mlx->offset_y + 50 / mlx->zoom;
 		}
 	}
 }
