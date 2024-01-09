@@ -61,7 +61,7 @@ void	draw_mandl(t_mlx *mlx)
 void	calc_mandl(t_mlx *mlx, double x, double y)
 {
 	int		i;
-    double	tmp;
+	double	tmp;
 
 	mlx->name = "mandelbrot";
 	mlx->zx = 0;
