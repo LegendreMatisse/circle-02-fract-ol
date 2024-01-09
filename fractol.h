@@ -76,6 +76,7 @@ void	secondary_arg_check(int argc, char **argv, double *x, double *y);
 void	put_color_to_pixel(t_mlx *mlx, int x, int y, int color);
 int		draw_fractal(t_mlx *mlx, char *choice, char function);
 int		pick_color(int i, t_mlx *mlx);
+int		pick_color_julia(int i, t_mlx *mlx);
 
 /*Mandelbrot*/
 void	init_mandel(t_mlx *mlx, char function);
