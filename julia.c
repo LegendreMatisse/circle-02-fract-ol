@@ -51,8 +51,8 @@ void	draw_julia(t_mlx *mlx)
 		{
 			mlx->zx = mlx->x / mlx->zoom + mlx->offset_x;
 			mlx->zy = mlx->y / mlx->zoom + mlx->offset_y;
-			if (mlx->zx >= -2.0 && mlx->zx <= 2.0 &&
-				mlx->zy >= -2.0 && mlx->zy <= 2.0)
+			if (mlx->zx >= -2.0 && mlx->zx <= 2.0
+				&& mlx->zy >= -2.0 && mlx->zy <= 2.0)
 				calc_julia(mlx, mlx->zx, mlx->zy);
 			mlx->y++;
 		}
