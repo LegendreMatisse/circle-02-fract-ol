@@ -68,16 +68,20 @@ void	zoom(t_mlx *mlx, char direction)
 	if (direction == '+')
 	{
 		mlx->zoom = mlx->zoom + 50;
-		mlx->offset_x = mlx->offset_x - 50 / mlx->zoom;
-		mlx->offset_y = mlx->offset_y - 50 / mlx->zoom;
+		//mlx->offset_x = mlx->offset_x - 50 / mlx->zoom;
+		//mlx->offset_y = mlx->offset_y - 50 / mlx->zoom;
+		move(mlx, 'd');
+		move(mlx, 'r');
 	}
 	else
 	{
 		if (mlx->zoom > 50)
 		{
 			mlx->zoom = mlx->zoom - 50;
-			mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
-			mlx->offset_y = mlx->offset_y + 50 / mlx->zoom;
+			//mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
+			//mlx->offset_y = mlx->offset_y + 50 / mlx->zoom;
+			move(mlx, 'u');
+			move(mlx, 'l');
 		}
 	}
 }
