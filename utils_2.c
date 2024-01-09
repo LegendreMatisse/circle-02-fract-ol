@@ -65,25 +65,32 @@ int	ft_isfloat(const char *str)
 
 void	zoom(t_mlx *mlx, char direction)
 {
-	if (direction == '+')
-	{
-		mlx->zoom = mlx->zoom + 50;
-		mlx->offset_x = mlx->offset_x - 50 / mlx->zoom;
-		mlx->offset_y = mlx->offset_y - 50 / mlx->zoom;
-		move(mlx, 'd');
-		move(mlx, 'r');
-	}
-	else
-	{
-		if (mlx->zoom > 50)
-		{
-			mlx->zoom = mlx->zoom - 50;
-			mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
-			mlx->offset_y = mlx->offset_y + 50 / mlx->zoom;
-			move(mlx, 'u');
-			move(mlx, 'l');
-		}
-	}
+	double	zoom_factor;
+	double	center_x;
+	double	center_y;
+
+	zoom_factor = 50.0;
+	center_x = SIZE / 2.0;
+	center_y = SIZE / 2.0;
+    if (direction == '+')
+    {
+        mlx->offset_x = (mlx->offset_x - center_x) *
+						(mlx->zoom + zoom_factor) / mlx->zoom + center_x;
+        mlx->offset_y = (mlx->offset_y - center_y) *
+						(mlx->zoom + zoom_factor) / mlx->zoom + center_y;
+        mlx->zoom = mlx->zoom + zoom_factor;
+    }
+    else
+    {
+        if (mlx->zoom > zoom_factor)
+        {
+            mlx->offset_x = (mlx->offset_x - center_x) *
+							(mlx->zoom - zoom_factor) / mlx->zoom + center_x;
+            mlx->offset_y = (mlx->offset_y - center_y) *
+							(mlx->zoom - zoom_factor) / mlx->zoom + center_y;
+            mlx->zoom = mlx->zoom - zoom_factor;
+        }
+    }
 }
 
 void	move(t_mlx *mlx, char direction)
@@ -120,3 +127,24 @@ void	free_mlx(t_mlx *mlx)
 		free(mlx);
 	mlx = NULL;
 }
+
+
+/*if (direction == '+')
+	{
+		mlx->zoom = mlx->zoom + 50;
+		mlx->offset_x = mlx->offset_x - 50 / mlx->zoom;
+		mlx->offset_y = mlx->offset_y - 50 / mlx->zoom;
+		move(mlx, 'd');
+		move(mlx, 'r');
+	}
+	else
+	{
+		if (mlx->zoom > 50)
+		{
+			mlx->zoom = mlx->zoom - 50;
+			mlx->offset_x = mlx->offset_x + 50 / mlx->zoom;
+			mlx->offset_y = mlx->offset_y + 50 / mlx->zoom;
+			move(mlx, 'u');
+			move(mlx, 'l');
+		}
+	}*/
