@@ -34,32 +34,13 @@ void	init_julia(t_mlx *mlx, double x, double y, char function)
 
 void	draw_julia(t_mlx *mlx)
 {
-	int start_x = (0 - mlx->offset_x) * mlx->zoom;
-	int start_y = (0 - mlx->offset_y) * mlx->zoom;
-	int end_x = (SIZE - mlx->offset_x) * mlx->zoom;
-	int end_y = (SIZE - mlx->offset_y) * mlx->zoom;
+	int start_x = 0;
+	int start_y = 0;
+	int end_x = SIZE;
+	int end_y = SIZE;
 
-    if (start_x < 0) start_x = 0;
-    if (start_y < 0) start_y = 0;
-    if (end_x > SIZE) end_x = SIZE;
-    if (end_y > SIZE) end_y = SIZE;
-
-    mlx->x = start_x;
-    while (mlx->x < end_x)
-    {
-        mlx->y = start_y;
-        while (mlx->y < end_y)
-        {
-            calc_julia(mlx);
-            mlx->y++;
-        }
-        mlx->x++;
-    }
-
-	if (start_x < 0) start_x = 0;
-	if (start_y < 0) start_y = 0;
-	if (end_x > SIZE) end_x = SIZE;
-	if (end_y > SIZE) end_y = SIZE;
+	double x;
+	double y;
 
 	mlx->x = start_x;
 	while (mlx->x < end_x)
@@ -67,7 +48,12 @@ void	draw_julia(t_mlx *mlx)
 		mlx->y = start_y;
 		while (mlx->y < end_y)
 		{
-			calc_julia(mlx);
+			x = mlx->x / mlx->zoom + mlx->offset_x;
+			y = mlx->y / mlx->zoom + mlx->offset_y;
+			if (x >= -2.0 && x <= 2.0 && y >= -2.0 && y <= 2.0)
+			{
+				calc_julia(mlx, x, y);
+			}
 			mlx->y++;
 		}
 		mlx->x++;
