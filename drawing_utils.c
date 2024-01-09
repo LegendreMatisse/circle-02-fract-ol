@@ -54,7 +54,7 @@ int	pick_color(int i, t_mlx *mlx)
 		return (mlx->color * i);
 }
 
-int	_pick_color(int i, t_mlx *mlx)
+int	p_c_julia(int i, t_mlx *mlx)
 {
 	double	norm_iter;
 	int		r;
